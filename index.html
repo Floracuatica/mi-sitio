@@ -48,8 +48,8 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <!-- 2 columnas para la barra lateral -->
-            <div class="col-2 sidebar" style="background-color: #dae5e5;">
+            <!-- 12 columnas para la barra lateral en pantallas pequeñas, 2 columnas en pantallas grandes -->
+            <div class="col-12 col-md-2 sidebar" style="background-color: #dae5e5;">
                 <!-- Logo con la Flor de la Vida -->
                 <div class="logo-container">
                     <a href="#" onclick="cargarContenido('inicio')">
@@ -70,7 +70,6 @@
                     </a>
                 </div>
 
-
                 <ul>
                     <li><a href="#" onclick="cargarContenido('mazos')">Mazos</a></li>
                     <li><a href="#" onclick="cargarContenido('terapias')">Terapia Alternativa</a></li>
@@ -81,18 +80,16 @@
                 </ul>
             </div>
 
-            <!-- 7 columnas para el contenido principal -->
-            <div class="col-7 content" id="contenidoPrincipal">
-            
+            <!-- 12 columnas para el contenido principal en pantallas pequeñas, 7 columnas en pantallas grandes -->
+            <div class="col-12 col-md-7 content" id="contenidoPrincipal">
+
             </div>
 
-
-            <!-- 3 columnas para la imagen de fondo (crystals.jpg) -->
-            <div class="col-3 corner" style="background-image: url('img/crystals.jpg'); background-size: cover;"></div>
+            <!-- 0 columnas para la imagen en pantallas pequeñas, 3 columnas en pantallas grandes -->
+            <div class="d-none d-md-block col-md-3 corner" style="background-image: url('img/crystals.jpg'); background-size: cover;"></div>
         </div>
     </div>
     <script src="js/scripts.js"></script>
-
 
 </body>
 
