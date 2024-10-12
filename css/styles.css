@@ -1,0 +1,295 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #f5f5f5; /* Fondo blanco invierno */
+}
+
+/* Estilo de la barra lateral */
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    text-align: center;
+}
+
+.sidebar ul li a {
+    color: white;
+    background-color: #52beb6;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    font-family: 'Verdana', sans-serif;
+    text-align: center;
+}
+
+.sidebar ul li a:hover {
+    background-color: #52be80;
+    color: white;
+}
+
+/* Estilo del contenido principal */
+.content {
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+/* Estilo de la esquina con imagen de fondo (wings.jpg o crystals.jpg) */
+.corner {
+    background-size: cover;
+    height: 100vh;
+}
+
+/* Estilo del logo */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    /* Ajusta la altura según sea necesario */
+}
+
+.logo {
+    width: 100px;
+    /* Ajusta el tamaño del logo */
+    margin-top: 10px;
+}
+.corner {
+    background-image: url('../img/crystals.jpg'); /* Subes una carpeta con ../ y luego accedes a img */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+/* Estilo para centrar el contenido del catálogo */
+.catalogo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+
+/* Catálogo de tiradas estilo grid */
+.catalogo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Autoajuste de columnas */
+    gap: 20px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Estilo de cada tirada */
+.tirada {
+    background-color: #fff;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tirada img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.tirada h2 {
+    margin: 10px 0 0;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Para móviles */
+@media (max-width: 600px) {
+    .catalogo {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+}
+
+/* Botón estilizado para "Volver a Inicio" */
+.btn-volver {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #52beb6; /* Puedes cambiar este color si prefieres otro */
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover: Cambia el color del fondo cuando el mouse pase por encima */
+.btn-volver:hover {
+    background-color: #52be80; /* Un color más claro para el hover */
+}
+.catalogo-container h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px; /* Añade más espacio debajo del título */
+}
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #52beb6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #52be80;
+}
+.intro-section {
+    padding: 20px;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.about-me, .services, .cta {
+    margin-top: 20px;
+}
+
+h1, h2 {
+    color: #52be80;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+a {
+    color: #52be80;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #52beb6;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #52be80;
+}
+
+.catalogo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.tirada {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.page-number {
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+.page-number.active {
+    background-color: #52be80;
+    color: white;
+}
+
+.prev, .next {
+    cursor: pointer;
+    margin: 0 10px;
+    padding: 5px 10px;
+    background-color: #52beb6;
+    color: white;
+    border-radius: 5px;
+}
+.logo-container a {
+    text-decoration: none;
+}
+
+.logo-container a:focus {
+    outline: none;
+}
+
+/* Estilo del botón de WhatsApp */
+.whatsapp-button {
+    display: inline-block;
+    text-align: center;
+    background-color: #4CAF50; /* Ajusta el color del botón */
+    color: white;
+    padding: 12px 30px; /* Tamaño del botón */
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 0 auto; /* Para centrar el botón horizontalmente */
+    display: block;
+    width: fit-content; /* Ajusta el tamaño al contenido */
+}
+
+.container-whatsapp {
+    text-align: center; /* Centra el contenido dentro del contenedor */
+    margin-bottom: 20px; /* Espacio inferior entre el botón y otros elementos */
+}

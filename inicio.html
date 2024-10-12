@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarot Vía</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Enlace a tu archivo CSS externo -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        /* Logo con la Flor de la Vida */
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 160px;
+        }
+
+        .flower-svg {
+            width: 90px;
+            height: 90px;
+            fill: none;
+            stroke: #52be80;
+            stroke-width: 3;
+        }
+
+        .name {
+            font-size: 20px;
+            color: #52be80;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- 2 columnas para la barra lateral -->
+            <div class="col-2 sidebar" style="background-color: #dae5e5;">
+                <!-- Logo con la Flor de la Vida -->
+                <div class="logo-container">
+                    <a href="#" onclick="cargarContenido('inicio')">
+                        <!-- SVG de la Flor de la Vida -->
+                        <svg class="flower-svg" viewBox="0 0 100 100">
+                            <circle cx="50" cy="20" r="15" />
+                            <circle cx="50" cy="50" r="15" />
+                            <circle cx="50" cy="80" r="15" />
+                            <circle cx="35" cy="35" r="15" />
+                            <circle cx="35" cy="65" r="15" />
+                            <circle cx="65" cy="35" r="15" />
+                            <circle cx="65" cy="65" r="15" />
+                            <circle cx="20" cy="50" r="15" />
+                            <circle cx="80" cy="50" r="15" />
+                        </svg>
+
+                        <div class="name">Tarot Vía</div>
+                    </a>
+                </div>
+
+
+                <ul>
+                    <li><a href="#" onclick="cargarContenido('mazos')">Mazos</a></li>
+                    <li><a href="#" onclick="cargarContenido('terapias')">Terapia Alternativa</a></li>
+                    <li><a href="#" onclick="cargarContenido('cursos')">Cursos</a></li>
+                    <li><a href="#" onclick="cargarContenido('talismanes')">Talismanes</a></li>
+                    <li><a href="#" onclick="cargarContenido('rituales')">Rituales</a></li>
+                    <li><a href="#" onclick="cargarContenido('tiradas')">Tiradas</a></li>
+                    <li><a href="#" onclick="cargarContenido('contacteme')">Contácteme</a></li>
+                </ul>
+            </div>
+
+            <!-- 7 columnas para el contenido principal -->
+            <div class="col-7 content" id="contenidoPrincipal">
+                <div class="intro-section">
+                    <h1>Te doy la bienvenida a Tarot Vía: Conecta con tu energía interior</h1>
+                    <p>Transforma tus dudas en claridad con mis lecturas personalizadas de tarot.</p>
+
+                    <div class="about-me">
+                        <h2>Sobre mí</h2>
+                        <p>Mi nombre es Rommy, y puedes siempre encontrarme cuando requieres de una lectura de tarot,
+                            consultar por rituales que abran tus caminos y terapias alternativas. Ahora todos mis
+                            servicios también los puedes encontrar por aquí. Desde hace años, he sido un canal, en el
+                            proceso de ayudar a las personas a encontrar respuestas y claridad mediante las lecturas de
+                            tarot telefónicas. Mi enfoque se basa en la conexión con energías. Estoy aquí para
+                            escucharte y acompañarte en tu camino si así lo decides.</p>
+                    </div>
+
+                    <div class="services">
+                        <h2>Mis Servicios</h2>
+                        <ul>
+                            <li><strong>Lecturas de Tarot Personalizadas:</strong> Acompañamiento en decisiones
+                                importantes con tiradas de tarot específicas para el amor, el trabajo, o el crecimiento
+                                personal vía telefónica. </li>
+                            <li><strong>Rituales de Conexión Espiritual:</strong> Rituales diseñados para ayudarte a
+                                manifestar lo que deseas o a dejar ir lo que ya no necesitas.</li>
+                            <li><strong>Cursos y Talleres vía Zoom:</strong> Aprende a usar el tarot, rituales y
+                                talismanes para
+                                mejorar tu vida diaria. </li>
+                        </ul>
+                    </div>
+
+                    <div class="cta">
+                        <h2>¿Listo para descubrir lo que las cartas tienen para decirte?</h2>
+                        <p><a href="https://wa.me/56949378439?text=Hola,%20quiero%20agendar%20una%20consulta%20de%20Tarot." style="color: #52be80; text-decoration: none;">Agenda tu consulta conmigo por esta vía.</a></p>
+                    </div>                    
+                </div>
+            </div>
+
+
+            <!-- 3 columnas para la imagen de fondo (crystals.jpg) -->
+            <div class="col-3 corner" style="background-image: url('img/crystals.jpg'); background-size: cover;"></div>
+        </div>
+    </div>
+    <script src="js/scripts.js"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+
+</body>
+
+</html>
