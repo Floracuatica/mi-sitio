@@ -115,20 +115,12 @@ function cargarContenido(seccion) {
                     <h2>Aprende Aqualead</h2>
                 </div>
                 <div class="tirada">
-                    <img src="img/sigil.jpg" alt="Talismanes y Sigilos">
-                    <h2>Aprende de Talismanes y Sigilos</h2>
-                </div>
-                <div class="tirada">
                     <img src="img/noc8.jpg" alt="Protección Nocturna">
                     <h2>Aprende Protección Nocturna</h2>
                 </div>
                 <div class="tirada">
                     <img src="img/altar.jpg" alt="Creación de Altares">
                     <h2>Aprende a Crear tu Altar</h2>
-                </div>
-                <div class="tirada">
-                    <img src="img/cromo.jpg" alt="Cromoterapia">
-                    <h2>Aprende Cromoterapia</h2>                        </div>
                 </div>
                 <a href="#" onclick="cargarContenido('inicio')" class="btn-volver">Volver a Inicio</a>
                 </div>`;
@@ -138,18 +130,6 @@ function cargarContenido(seccion) {
             <div class="catalogo-container">
             <h1>Elige el talismán que necesitas</h1>
             <div class="catalogo">
-                <div class="tirada">
-                    <img src="img/tarot1.png" alt="Talismán de Arcángel Gabriel">
-                    <h2>Talismán del Arcángel Gabriel</h2>
-                </div>
-                <div class="tirada">
-                    <img src="img/tarot1.png" alt="Talismán del Arcángel Samael">
-                    <h2>Talismán del Arcángel Samael</h2>
-                </div>
-                <div class="tirada">
-                    <img src="img/tarot1.png" alt="Talismán de Arcángel Rafael">
-                    <h2>Talismán del Arcángel Rafael</h2>
-                </div>
                 <div class="tirada">
                     <img src="img/sach.jpg" alt="Talismán del Dinero">
                     <h2>Talismán del Dinero</h2>
@@ -162,26 +142,9 @@ function cargarContenido(seccion) {
                     <img src="img/Mich.jpg" alt="Talismán de Protección">
                     <h2>Talismán de Protección y Luz</h2>
                 </div>
-                <div class="tirada">
-                    <img src="img/just.jpg" alt="Talismán de la justicia">
-                    <h2>Talismán de la justicia</h2>
-                </div>
-                <div class="tirada">
-                    <img src="img/prot.jpg" alt="Talismán escudo de Ángel">
-                    <h2>Talismán escudo de Ángel</h2>
-                </div>
-                <div class="tirada">
-                    <img src="img/bendi.jpg" alt="Talismán de Bendiciones">
-                    <h2>Talismán de Bendiciones al Hogar</h2>
-                </div>
                 </div>
                 <a href="#" onclick="cargarContenido('inicio')" class="btn-volver">Volver a Inicio</a>
                 </div>`;
-            break;
-        case 'rituales':
-            contenido = `
-            <h1>Rituales</h1>
-            <p>Aprende sobre rituales místicos para la conexión espiritual.</p>`;
             break;
         case 'tiradas':
             contenido = `
