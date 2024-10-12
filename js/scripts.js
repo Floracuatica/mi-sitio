@@ -236,50 +236,6 @@ function cargarContenido(seccion) {
                         Contáctame en WhatsApp
                         </a>
                     </div>
-            
-                    <p>Si prefieres escribirlo por aquí también estará bien:</p>
-                    
-                    <form id="formContacto" style="margin-bottom: 20px;">
-                        <div style="margin-bottom: 10px;">
-                            <label for="nombre">Nombre:</label>
-                            <input type="text" id="nombre" name="nombre" required>
-                        </div>
-                        <div style="margin-bottom: 10px;">
-                            <label for="email">Email:</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div style="margin-bottom: 10px;">
-                            <label for="mensaje">Mensaje:</label>
-                            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-                        </div>
-                        <div style="margin-top: 10px;">
-                            <button type="submit">Enviar Mensaje</button>
-                        </div>
-                    </form>
-                    <p id="respuesta" style="margin-top: 20px;"></p>
-                `;
-
-            // Mostrar el contenido primero
-            document.getElementById('contenidoPrincipal').innerHTML = contenido;
-
-            // Luego inicializar EmailJS y el event listener después de cargar el contenido
-            (function () {
-                emailjs.init("_z9agavXauiDuZ2KL"); // Reemplaza _z9agavXauiDuZ2KL con tu Public Key
-            })();
-
-            // Escuchar el evento submit del formulario
-            document.getElementById('formContacto').addEventListener('submit', function (event) {
-                event.preventDefault(); // Detener la acción predeterminada del formulario
-                document.getElementById('respuesta').textContent = "Enviando...";
-
-                // Enviar el formulario a través de EmailJS usando sendForm
-                emailjs.sendForm('service_wdg2thv', 'template_hacs60q', this)
-                    .then(function () {
-                        document.getElementById('respuesta').textContent = '¡El mensaje ha sido enviado con éxito!';
-                    }, function (error) {
-                        document.getElementById('respuesta').textContent = 'Ocurrió un problema al enviar el mensaje, por favor intenta nuevamente.';
-                    });
-            });
             break;
 
     }
