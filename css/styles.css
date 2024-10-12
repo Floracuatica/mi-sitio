@@ -293,3 +293,90 @@ a:hover {
     text-align: center; /* Centra el contenido dentro del contenedor */
     margin-bottom: 20px; /* Espacio inferior entre el botón y otros elementos */
 }
+
+/* Estilo de las descripciones (inicialmente ocultas) */
+.reiki-info, .aqualead-info, .akashic-info {
+    display: none; /* Oculta las descripciones por defecto */
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 250px;
+    top: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    font-size: 0.9em;
+    color: #333; /* Color de texto gris oscuro */
+}
+
+/* Mostrar la descripción cuando se pasa el cursor sobre el contenedor */
+.reiki-box:hover .reiki-info,
+.aqualead-box:hover .aqualead-info,
+.akashic-box:hover .akashic-info {
+    display: block; /* Muestra las descripciones */
+}
+
+
+/* Ajustar el estilo de los contenedores */
+.tirada {
+    width: 210px; /* Tamaño ajustado */
+    margin: 10px; /* Reducir el espacio entre los contenedores */
+    position: relative;
+    text-align: center;
+}
+
+/* Ajustar el grid para que los contenedores queden más juntos */
+.catalogo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajuste automático de columnas */
+    gap: 20px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Ajustes de las imágenes y el texto */
+.tirada img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tirada h2 {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #333; /* Texto gris oscuro */
+}
+/* Estilo para las descripciones de los mazos */
+.info {
+    display: none; /* Oculta las descripciones por defecto */
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 250px;
+    top: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    font-size: 0.9em;
+}
+
+/* Mostrar la descripción al pasar el cursor sobre el mazo */
+.tirada:hover .info {
+    display: block;
+}
+
+/* Asegurar que las cartas se mantengan correctamente alineadas */
+.tirada {
+    width: 210px;
+    position: relative;
+    text-align: center;
+    margin-bottom: 40px; /* Para evitar que las descripciones se superpongan con otras cartas */
+}
