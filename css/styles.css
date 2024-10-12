@@ -413,3 +413,70 @@ a:hover {
     font-weight: normal;
     font-style: normal;
 }
+
+/* Para pantallas pequeñas (máximo 575px) */
+@media (max-width: 575px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw; /* Ocupa todo el ancho del viewport */
+        height: 100vh; /* Ocupa toda la altura del viewport */
+        background-color: #dae5e5;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 20px;
+        overflow-y: auto; /* Permitir scroll si es necesario */
+    }
+
+    .logo-container {
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .flower-svg {
+        width: 70px;
+        height: 70px;
+    }
+
+    .name {
+        font-size: 18px;
+    }
+
+    .sidebar ul {
+        width: 100%;
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    .sidebar ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .sidebar ul li a {
+        display: block;
+        width: 90%; /* Los enlaces ocupan el 90% del ancho */
+        padding: 15px;
+        margin: 5px auto;
+        text-align: center;
+        background-color: #52beb6;
+        color: white;
+        font-size: 18px;
+        border-radius: 10px;
+        text-decoration: none;
+    }
+
+    .sidebar ul li a:hover {
+        background-color: #52be80;
+    }
+
+    /* Ocultar el contenido principal */
+    .content, .corner {
+        display: none;
+    }
+}
