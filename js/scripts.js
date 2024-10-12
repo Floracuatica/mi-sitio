@@ -2,7 +2,7 @@ function cargarContenido(seccion) {
     let contenido = '';
 
     switch (seccion) {
-    case 'inicio':  // Este es el nuevo caso para la página de inicio
+        case 'inicio':  // Este es el nuevo caso para la página de inicio
         contenido = `
         <div class="intro-section">
         <h1>Bienvenido a Tarot Vía: Conecte con su energía interior</h1>
@@ -28,15 +28,8 @@ function cargarContenido(seccion) {
                         talismanes para potenciar su vida diaria.</li>
                 </ul>
             </div>
-
-            <div class="cta">
-                <h2>¿Desea saber qué tienen las cartas para decirle?</h2>
-                <p><a href="https://wa.me/56949378439?text=Hola,%20quiero%20agendar%20una%20consulta%20de%20Tarot." 
-                style="color: #52be80; text-decoration: none;">Agende su consulta por esta vía.</a></p>
-            </div>
-        </div>`;
-        break;
-}
+            </div>`;
+            break;
         case 'mazos':
             contenido = `
             <div class="catalogo-container">
