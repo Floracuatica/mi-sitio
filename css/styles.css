@@ -415,7 +415,7 @@ a:hover {
 }
 
 /* Para pantallas pequeñas (máximo 575px) */
-@media (max-width: 575px) {
+@media (max-width: 300px) {
     .sidebar {
         position: fixed;
         top: 0;
