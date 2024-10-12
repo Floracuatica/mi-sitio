@@ -273,7 +273,7 @@ function cargarContenido(seccion) {
             break;
         case 'contacteme':
             contenido = `
-                    <h1 style="margin-bottom: 20px; font-family: 'Afacad Flux', serif;">Contáctame</h1>
+                    <h1 style="margin-bottom: 20px; font-family: 'Afacad Flux', serif;">Contácteme</h1>
                     <p style="font-family: 'Afacad Flux', serif; padding: 10px; margin-left: 20px; margin-right: 20px; text-align: justify;">
                     Si lo que busca es una lectura personalizada desde la comodidad de donde se encuentre, puede solicitar una por $15.000 CLP. 
                     La sesión dura 30 minutos, y también tiene la opción de elegir una hora por $30.000 CLP. 
