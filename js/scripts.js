@@ -236,6 +236,22 @@ function cargarContenido(seccion) {
                         Contáctame en WhatsApp
                         </a>
                     </div>
+            
+                    <p id="respuesta" style="margin-top: 20px;"></p>
+                `;
+
+            // Mostrar el contenido primero
+            document.getElementById('contenidoPrincipal').innerHTML = contenido;
+
+           
+
+            // Escuchar el evento submit del formulario
+            document.getElementById('formContacto').addEventListener('submit', function (event) {
+                event.preventDefault(); // Detener la acción predeterminada del formulario
+                document.getElementById('respuesta').textContent = "Enviando...";
+
+               
+            });
             break;
 
     }
