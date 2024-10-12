@@ -40,55 +40,96 @@ function cargarContenido(seccion) {
         case 'mazos':
             contenido = `
             <div class="catalogo-container">
-            <h1>Elige el mazo con el que quieres tu lectura</h1>
-            <div class="catalogo">
-                <div class="tirada">
-                    <img src="img/ryder.jpg" alt="Ryder Waite">
-                    <h2>Tarot Ryder Waite</h2>
-                </div>
-                <div class="tirada">
-                    <img src="img/marsella.jpg" alt="Marsella">
-                    <h2>Tarot de Marsella</h2>
-                </div>
-                <div class="tirada">
-                    <img src="img/thoth.jpg" alt="Thoth">
-                    <h2>Tarot de Thoth</h2>
-                </div>
-                <div class="tirada">
-                    <img src="img/osho.jpg" alt="Osho Zen">
-                    <h2>Tarot Osho Zen</h2>
-                </div>
-                <div class="tirada">
-                    <img src="img/crow.jpg" alt="Tarot de los Cuervos">
-                    <h2>Tarot de los Cuervos</h2>
-                </div>
-                <div class="tirada">
-                    <img src="img/grim.jpg" alt="Tarot de los gatos">
-                    <h2>Tarot de los gatos</h2>
-                </div>
+    <h1>Elige el mazo con el que quieres tu lectura</h1>
+    <div class="catalogo">
+        <div class="tirada">
+            <img src="img/ryder.jpg" alt="Ryder Waite">
+            <h2>Tarot Ryder Waite</h2>
+            <div class="info">
+                <p>El mazo Ryder Waite es uno de los más populares y fue creado en 1909. Su simbolismo es claro y detallado, ideal tanto para principiantes como para lectores avanzados.</p>
             </div>
+        </div>
+        
+        <div class="tirada">
+            <img src="img/marsella.jpg" alt="Marsella">
+            <h2>Tarot de Marsella</h2>
+            <div class="info">
+                <p>El Tarot de Marsella es uno de los mazos más antiguos y tradicionales. Sus imágenes medievales simples conectan con los significados tradicionales del tarot.</p>
+            </div>
+        </div>
+
+        <div class="tirada">
+            <img src="img/thoth.jpg" alt="Thoth">
+            <h2>Tarot de Thoth</h2>
+            <div class="info">
+                <p>El Tarot de Thoth, creado por Aleister Crowley, está lleno de complejos símbolos esotéricos. Ideal para quienes buscan profundizar en lo metafísico y lo oculto.</p>
+            </div>
+        </div>
+
+        <div class="tirada">
+            <img src="img/osho.jpg" alt="Osho Zen">
+            <h2>Tarot Osho Zen</h2>
+            <div class="info">
+                <p>El Tarot Osho Zen se centra en la meditación y la reflexión personal. Sus cartas invitan a una mirada espiritual más que predictiva.</p>
+            </div>
+        </div>
+
+        <div class="tirada">
+            <img src="img/crow.jpg" alt="Tarot de los Cuervos">
+            <h2>Tarot de los Cuervos</h2>
+            <div class="info">
+                <p>El Tarot de los Cuervos evoca una energía oscura y espiritual. Sus cartas ofrecen una conexión profunda con lo oculto y el misterio.</p>
+            </div>
+        </div>
+
+        <div class="tirada">
+            <img src="img/grim.jpg" alt="Tarot de Grimalkin">
+            <h2>Tarot de los Gatos (Grimalkin)</h2>
+            <div class="info">
+                <p>El Tarot Grimalkin se inspira en la magia de los gatos. Con ilustraciones de felinos, este mazo tiene un toque encantador y místico.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
             </div>`;
             break;
         case 'terapias':
             contenido = `
-            <div class="catalogo-container">
-            <h1>Terapias Alternativas disponibles</h1>
-            <div class="catalogo">
-                <div class="tirada">
-                    <img src="img/dist.jpg" alt="Reiki">
-                    <h2>Reiki a distancia</h2>
-                </div>
-                <div class="tirada">
-                    <img src="img/aqui.jpg" alt="Aqualead">
-                    <h2>Aqualead</h2>
-                </div>
-                <div class="tirada">
-                    <img src="img/akashian.jpg" alt="Registros Akashicos">
-                    <h2>Registros Akashicos</h2>
+                <div class="catalogo-container">
+                    <h1>Terapias Alternativas disponibles</h1>
+                    <div class="catalogo">
+                        
+                        <!-- Reiki a distancia -->
+                        <div class="tirada reiki-box">
+                            <img src="img/dist.jpg" alt="Reiki">
+                            <h2>Reiki a distancia</h2>
+                            <div class="reiki-info">
+                                <p>El Reiki es una técnica de sanación energética donde un emisor canaliza energía vital hacia un receptor, ya sea una persona, animal, planta o situación. La energía puede ser transmitida a distancia, y su objetivo es aliviar molestias y apoyar la recuperación de la salud al desbloquear el flujo de energía en los chakras.<span class="price-info"><br><br>Precio: $25,000 CLP la sesión. Paquete de 3 sesiones en 1 semana por $45,000 CLP.</span></p>
+                            </div>
+                        </div>
+            
+                        <!-- Aqualead -->
+                        <div class="tirada aqualead-box">
+                            <img src="img/aqua.jpg" alt="Aqualead">
+                            <h2>Aqualead</h2>
+                            <div class="aqualead-info">
+                                <p>Aqualead es una técnica de sanación que canaliza la energía del agua para la sanación y limpieza de cuerpos y energías. Es especialmente útil para trabajar con la sanación emocional y la regeneración energética, apoyando a personas, animales y plantas.<span class="price-info"><br><br>Precio: $15,000 CLP la sesión. Paquete de 3 sesiones por $30,000 CLP.</span></p>
+                            </div>
+                        </div>
+            
+                        <div class="tirada akashic-box">
+                <img src="img/akashian.jpg" alt="Registros Akashicos">
+                <h2>Registros Akashicos</h2>
+                <div class="akashic-info">
+                    <p>Los Registros Akáshicos son un acceso a la memoria del alma, donde se guarda toda la información de vidas pasadas, presentes y futuras. Esta técnica permite recibir guía y respuestas a las preguntas más profundas de la vida a través de un canal espiritual.<span class="price-info"><br><br>Precio: $30,000 CLP.</span></p>
                 </div>
             </div>
-            </div>`;
+            
+                    </div>
+                </div>`;
             break;
+
         case 'cursos':
             contenido = `
             <div class="catalogo-container">
@@ -118,11 +159,6 @@ function cargarContenido(seccion) {
                     <img src="img/noc8.jpg" alt="Protección Nocturna">
                     <h2>Aprende Protección Nocturna</h2>
                 </div>
-                <div class="tirada">
-                    <img src="img/altar.jpg" alt="Creación de Altares">
-                    <h2>Aprende a Crear tu Altar</h2>
-                </div>
-                <a href="#" onclick="cargarContenido('inicio')" class="btn-volver">Volver a Inicio</a>
                 </div>`;
             break;
         case 'talismanes':
@@ -142,8 +178,6 @@ function cargarContenido(seccion) {
                     <img src="img/Mich.jpg" alt="Talismán de Protección">
                     <h2>Talismán de Protección y Luz</h2>
                 </div>
-                </div>
-                <a href="#" onclick="cargarContenido('inicio')" class="btn-volver">Volver a Inicio</a>
                 </div>`;
             break;
         case 'tiradas':
@@ -243,14 +277,14 @@ function cargarContenido(seccion) {
             // Mostrar el contenido primero
             document.getElementById('contenidoPrincipal').innerHTML = contenido;
 
-           
+
 
             // Escuchar el evento submit del formulario
             document.getElementById('formContacto').addEventListener('submit', function (event) {
                 event.preventDefault(); // Detener la acción predeterminada del formulario
                 document.getElementById('respuesta').textContent = "Enviando...";
 
-               
+
             });
             break;
 
