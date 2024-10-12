@@ -277,7 +277,7 @@ function cargarContenido(seccion) {
                     <p style="font-family: 'Afacad Flux', serif; padding: 10px; margin-left: 20px; margin-right: 20px; text-align: justify;">
                     Si lo que busca es una lectura personalizada desde la comodidad de donde se encuentre, puede solicitar una por $15.000 CLP. 
                     La sesión dura 30 minutos, y también tiene la opción de elegir una hora por $30.000 CLP. 
-                    El proceso es sencillo: contácteme vía WhatsApp por escrito al +569499378439 para coordinar el horario, realizar el pago y una vez confirmado, le llamo de manera telefónica, garantizando total privacidad y comodidad.
+                    El proceso es sencillo: contácteme vía WhatsApp por escrito para coordinar el horario, realizar el pago y una vez confirmado, le llamo de manera telefónica, garantizando total privacidad y comodidad.
                     </p>
                     <!-- Contenedor para centrar el botón -->
             <div style="text-align: center; margin: 20px 0;">
