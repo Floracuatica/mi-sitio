@@ -111,7 +111,7 @@ body {
 }
 
 /* Para móviles */
-@media (max-width: 600px) {
+@media (max-width: 300px) {
     .catalogo {
         grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
     }
