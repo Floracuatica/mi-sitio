@@ -2,41 +2,41 @@ function cargarContenido(seccion) {
     let contenido = '';
 
     switch (seccion) {
-        case 'inicio':  // Este es el nuevo caso para la página de inicio
-            contenido = `
-            <div class="intro-section">
-            <h1>Te doy la bienvenida a Tarot Vía: Conecta con tu energía interior</h1>
-            <p>Transforma tus dudas en claridad con mis lecturas personalizadas de tarot.</p>
+    case 'inicio':  // Este es el nuevo caso para la página de inicio
+        contenido = `
+        <div class="intro-section">
+        <h1>Bienvenido a Tarot Vía: Conecte con su energía interior</h1>
+        <p>Transforme sus inquietudes en claridad a través de lecturas de tarot personalizadas.</p>
 
-            <div class="about-me">
-                <h2>Sobre mí</h2>
-                <p>Mi nombre es Rommy, y puedes siempre encontrarme cuando requieres de una lectura de tarot,
-                        consultar por rituales que abran tus caminos y terapias alternativas. Ahora todos mis
-                        servicios también los puedes encontrar por aquí. Desde hace años, he sido un canal, en el
-                        proceso de ayudar a las personas a encontrar respuestas y claridad mediante las lecturas de
-                        tarot telefónicas. Mi enfoque se basa en la conexión con energías. Estoy aquí para
-                        escucharte y acompañarte en tu camino si así lo decides.</p>
-                </div>
+        <div class="about-me">
+            <h2>Sobre mí</h2>
+            <p>Mi nombre es Rommy, y me dedico a ofrecer orientación mediante el tarot y otras prácticas espirituales. 
+                Desde hace años, soy un canal a través del cual muchas personas han encontrado respuestas y claridad 
+                mediante consultas telefónicas. Mi enfoque está basado en la conexión con energías y mi compromiso es 
+                acompañarlo con profesionalismo y empatía en cada sesión.</p>
+            </div>
 
-                <div class="services">
-                    <h2>Mis Servicios</h2>
-                    <ul>
-                        <li><strong>Lecturas de Tarot Personalizadas:</strong> Acompañamiento en decisiones
-                            importantes con tiradas de tarot específicas para el amor, el trabajo, o el crecimiento
-                            personal vía telefónica. </li>
-                        <li><strong>Rituales de Conexión Espiritual:</strong> Rituales diseñados para ayudarte a
-                            manifestar lo que deseas o a dejar ir lo que ya no necesitas.</li>
-                        <li><strong>Cursos y Talleres vía Zoom:</strong> Aprende a usar el tarot, rituales y
-                            talismanes para mejorar tu vida diaria. </li>
-                    </ul>
-                </div>
+            <div class="services">
+                <h2>Servicios</h2>
+                <ul>
+                    <li><strong>Lecturas de Tarot Personalizadas:</strong> Asesoramiento para decisiones importantes a 
+                        través de tiradas de tarot específicas sobre amor, trabajo o crecimiento personal, realizadas 
+                        por teléfono.</li>
+                    <li><strong>Rituales de Conexión Espiritual:</strong> Ritualizaciones para manifestar deseos o 
+                        liberar bloqueos energéticos que ya no le sirven.</li>
+                    <li><strong>Cursos y Talleres vía Zoom:</strong> Aprenda sobre el uso del tarot, rituales y 
+                        talismanes para potenciar su vida diaria.</li>
+                </ul>
+            </div>
 
-                <div class="cta">
-                    <h2>¿Listo para descubrir lo que las cartas tienen para decirte?</h2>
-                    <p><a href="https://wa.me/56949378439?text=Hola,%20quiero%20agendar%20una%20consulta%20de%20Tarot." style="color: #52be80; text-decoration: none;">Agenda tu consulta por esta vía.</a></p>
-                </div>
-            </div>`;
-            break;
+            <div class="cta">
+                <h2>¿Desea saber qué tienen las cartas para decirle?</h2>
+                <p><a href="https://wa.me/56949378439?text=Hola,%20quiero%20agendar%20una%20consulta%20de%20Tarot." 
+                style="color: #52be80; text-decoration: none;">Agende su consulta por esta vía.</a></p>
+            </div>
+        </div>`;
+        break;
+}
         case 'mazos':
             contenido = `
             <div class="catalogo-container">
