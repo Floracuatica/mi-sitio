@@ -3,9 +3,9 @@ function cargarContenido(seccion) {
 
     switch (seccion) {
         case 'inicio':  // Este es el nuevo caso para la página de inicio
-        contenido = `
-        <div class="intro-section">
-        <h1>Bienvenido a Tarot Vía: Conecte con su energía interior</h1>
+            contenido = `
+    <div class="intro-section">
+        <h1><br><br>Bienvenido a Tarot Vía: Conecte con su energía interior</h1>
         <p>Transforme sus inquietudes en claridad a través de lecturas de tarot personalizadas.</p>
 
         <div class="about-me">
@@ -14,21 +14,42 @@ function cargarContenido(seccion) {
                 Desde hace años, soy un canal a través del cual muchas personas han encontrado respuestas y claridad 
                 mediante consultas telefónicas. Mi enfoque está basado en la conexión con energías y mi compromiso es 
                 acompañarlo con profesionalismo y empatía en cada sesión.</p>
-            </div>
+        </div>
 
-            <div class="services">
-                <h2>Servicios</h2>
-                <ul>
-                    <li><strong>Lecturas de Tarot Personalizadas:</strong> Asesoramiento para decisiones importantes a 
-                        través de tiradas de tarot específicas sobre amor, trabajo o crecimiento personal, realizadas 
-                        por teléfono.</li>
-                    <li><strong>Rituales de Conexión Espiritual:</strong> Ritualizaciones para manifestar deseos o 
-                        liberar bloqueos energéticos que ya no le sirven.</li>
-                    <li><strong>Cursos y Talleres vía Zoom:</strong> Aprenda sobre el uso del tarot, rituales y 
-                        talismanes para potenciar su vida diaria.</li>
-                </ul>
+        <div class="services">
+            <h2>Servicios</h2>
+            <ul>
+                <li><strong>Lecturas de Tarot Personalizadas:</strong> Asesoramiento para decisiones importantes a 
+                    través de tiradas de tarot específicas sobre amor, trabajo o crecimiento personal, realizadas 
+                    por teléfono.</li>
+                <li><strong>Rituales de Conexión Espiritual:</strong> Ritualizaciones para manifestar deseos o 
+                    liberar bloqueos energéticos que ya no le sirven.</li>
+                <li><strong>Cursos y Talleres vía Zoom:</strong> Aprenda sobre el uso del tarot, rituales y 
+                    talismanes para potenciar su vida diaria.</li>
+            </ul>
+        </div>
+
+        <!-- Sección de 4 íconos con palabras debajo -->
+        <div class="icon-bar">
+            <div class="icon-item">
+                <img src="img/integ.jpg" alt="Integridad" class="icon-circle">
+                <p>Integridad</p>
             </div>
-            </div>`;
+            <div class="icon-item">
+                <img src="img/sinceri.jpg" alt="Sinceridad" class="icon-circle">
+                <p>Sinceridad</p>
+            </div>
+            <div class="icon-item">
+                <img src="img/trust.jpg" alt="Confianza" class="icon-circle">
+                <p>Confianza</p>
+            </div>
+            <div class="icon-item">
+                <img src="img/commitment.jpg" alt="Compromiso" class="icon-circle">
+                <p>Compromiso</p>
+            </div>
+        </div>
+
+    </div>`;
             break;
         case 'mazos':
             contenido = `
@@ -252,17 +273,20 @@ function cargarContenido(seccion) {
             break;
         case 'contacteme':
             contenido = `
-                    <h1 style="margin-bottom: 20px;">Contácteme</h1>
-                    <p>Si quieres agendar una lectura, no dudes en contactarme vía WhatsApp, siempre estaré para contestar tu mensaje.</p>
-            
+                    <h1 style="margin-bottom: 20px; font-family: 'Afacad Flux', serif;">Contáctame</h1>
+                    <p style="font-family: 'Afacad Flux', serif; padding: 10px; margin-left: 20px; margin-right: 20px; text-align: justify;">
+                    Si lo que busca es una lectura personalizada desde la comodidad de donde se encuentre, puede solicitar una por $15.000 CLP. 
+                    La sesión dura 30 minutos, y también tiene la opción de elegir una hora por $30.000 CLP. 
+                    El proceso es sencillo: contácteme vía WhatsApp por escrito al +569499378439 para coordinar el horario, realizar el pago y una vez confirmado, le llamo de manera telefónica, garantizando total privacidad y comodidad.
+                    </p>
                     <!-- Contenedor para centrar el botón -->
-                    <div style="text-align: center; margin: 20px 0;">
-                        <a href="https://wa.me/56949378439?text=Hola,%20quiero%20una%20lectura%20de%20Tarot." 
-                        class="whatsapp-button" 
-                        style="display: inline-block; padding: 10px 20px; background-color: #25d366; color: white; border-radius: 5px; text-decoration: none;">
-                        Contáctame en WhatsApp
-                        </a>
-                    </div>
+            <div style="text-align: center; margin: 20px 0;">
+            <a href="https://wa.me/56949378439?text=Hola,%20quiero%20una%20lectura%20de%20Tarot." 
+            class="whatsapp-button" 
+            style="display: inline-block; padding: 10px 20px; background-color: #25d366; color: white; border-radius: 5px; text-decoration: none;">
+            Contáctame en WhatsApp
+            </a>
+        </div>
             
                     <p id="respuesta" style="margin-top: 20px;"></p>
                 `;
@@ -270,16 +294,13 @@ function cargarContenido(seccion) {
             // Mostrar el contenido primero
             document.getElementById('contenidoPrincipal').innerHTML = contenido;
 
-
-
             // Escuchar el evento submit del formulario
             document.getElementById('formContacto').addEventListener('submit', function (event) {
                 event.preventDefault(); // Detener la acción predeterminada del formulario
                 document.getElementById('respuesta').textContent = "Enviando...";
-
-
             });
             break;
+
 
     }
     document.getElementById('contenidoPrincipal').innerHTML = contenido;
