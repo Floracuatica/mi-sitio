@@ -306,6 +306,7 @@ function cargarContenido(seccion) {
     document.getElementById('contenidoPrincipal').innerHTML = contenido;
 }
 
+  
 document.addEventListener('DOMContentLoaded', function () {
     // Cargar la página de inicio por defecto
     cargarContenido('inicio');  // Aquí cambiamos 'tiradas' por 'inicio'
