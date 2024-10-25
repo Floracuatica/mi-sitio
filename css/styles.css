@@ -41,10 +41,12 @@ body {
     background-color: #f5f5f5;
 }
 
-/* Estilo de la esquina con imagen de fondo (wings.jpg o crystals.jpg) */
 .corner {
-    background-size: cover;
-    height: 100vh;
+    background-image: url('../img/crystals.jpg')
+    background-size: cover !important; /* Asegura que la imagen cubra el contenedor */
+    background-attachment: scroll !important; /* Se mueve junto con el scroll */
+    height: 100vh; /* Toda la altura del viewport */
+    position: relative;
 }
 
 /* Estilo del logo */
@@ -60,13 +62,6 @@ body {
     width: 100px;
     /* Ajusta el tamaño del logo */
     margin-top: 10px;
-}
-.corner {
-    background-image: url('../img/crystals.jpg'); /* Subes una carpeta con ../ y luego accedes a img */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
 }
 
 /* Estilo para centrar el contenido del catálogo */
@@ -520,3 +515,64 @@ a:hover {
     }
 }
 
+/* Asegurar que las tiradas se alineen de manera más compacta */
+.catalogo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Ajuste automático de columnas */
+    gap: 10px; /* Reducir el espacio entre los cuadraditos */
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Asegurarnos de que .tirada-bonita sea más compacta */
+.tirada-bonita {
+    background-image: url('../img/deb.jpg'); /* Fondo nacarado */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 8px; /* Reducir el padding */
+    border-radius: 12px; /* Bordes redondeados más pequeños */
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1); /* Sombra más ligera */
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 130px; /* Cuadraditos más pequeños */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    overflow: visible;
+    position: relative;
+    z-index: 1;
+}
+
+/* Mantener el contenido alineado y centrado */
+.tirada-bonita .info {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    padding: 10px; /* Reducir el padding interno */
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+/* Ajustes para hover */
+.tirada-bonita:hover .info {
+    opacity: 1;
+    visibility: visible;
+}
+
+.tirada-bonita:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 5;
+}
