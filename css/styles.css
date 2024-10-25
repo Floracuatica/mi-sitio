@@ -480,3 +480,43 @@ a:hover {
         display: none;
     }
 }
+
+/* Contenedor principal de disponibilidad */
+.disponibilidad-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Crea dos columnas de igual tamaño */
+    gap: 20px; /* Espacio entre las columnas */
+    padding: 20px;
+}
+
+/* Cada día ocupa una de las celdas de la cuadrícula */
+.day {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos de los días */
+.day h2 {
+    color: #33b46e;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Texto del horario */
+.day p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+/* Responsive: Para pantallas más pequeñas, cambia a una sola columna */
+@media (max-width: 768px) {
+    .disponibilidad-container {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+}
+

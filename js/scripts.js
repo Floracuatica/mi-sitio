@@ -6,26 +6,26 @@ function cargarContenido(seccion) {
             contenido = `
     <div class="intro-section">
         <h1><br><br>Bienvenido a Tarot Vía: Conecte con su energía interior</h1>
-        <p>Transforme sus inquietudes en claridad a través de lecturas de tarot personalizadas.</p>
+        <p>Lecturas de tarot personalizadas.</p>
 
         <div class="about-me">
             <h2>Sobre mí</h2>
-            <p>Mi nombre es Rommy, y me dedico a ofrecer orientación mediante el tarot y otras prácticas espirituales. 
-                Desde hace años, soy un canal a través del cual muchas personas han encontrado respuestas y claridad 
-                mediante consultas telefónicas. Mi enfoque está basado en la conexión con energías y mi compromiso es 
-                acompañarlo con profesionalismo y empatía en cada sesión.</p>
+            <p>Mi nombre es Rommy, me dedico a ofrecer orientación mediante el tarot y otras prácticas espirituales. 
+                Desde hace años, soy un canal a través del cual puedes encontrar respuestas. Siempre mediante 
+                consultas telefónicas para una mayor privacidad. Mi enfoque está basado en la conexión con energías y mi compromiso es 
+                ser lo más descriptiva posible, con empatía en cada sesión.</p>
         </div>
 
         <div class="services">
             <h2>Servicios</h2>
             <ul>
-                <li><strong>Lecturas de Tarot Personalizadas:</strong> Asesoramiento para decisiones importantes a 
-                    través de tiradas de tarot específicas sobre amor, trabajo o crecimiento personal, realizadas 
-                    por teléfono.</li>
+                <li><strong>Lecturas de Tarot Personalizadas:</strong> Si tiene dudas, ya sea sobre amor, trabajo o 
+                crecimiento personal, puede siempre agendar en el horario que prefiera y puede también realizar la misma consulta
+                a través de diferentes ángulos. Estoy para escucharle.</li>
                 <li><strong>Rituales de Conexión Espiritual:</strong> Ritualizaciones para manifestar deseos o 
                     liberar bloqueos energéticos que ya no le sirven.</li>
                 <li><strong>Cursos y Talleres vía Zoom:</strong> Aprenda sobre el uso del tarot, rituales y 
-                    talismanes para potenciar su vida diaria.</li>
+                    talismanes para potenciar su vida diaria. Siempre puede consultar.</li>
             </ul>
         </div>
 
@@ -175,25 +175,6 @@ function cargarContenido(seccion) {
                 </div>
                 </div>`;
             break;
-        case 'talismanes':
-            contenido = `
-            <div class="catalogo-container">
-            <h1>Elige el talismán que necesitas</h1>
-            <div class="catalogo">
-                <div class="tirada">
-                    <img src="img/sach.jpg" alt="Talismán del Dinero">
-                    <h2>Talismán del Dinero</h2>
-                </div>
-                <div class="tirada">
-                    <img src="img/Han.jpg" alt="Talismán de Amor">
-                    <h2>Talismán de Amor</h2>
-                </div>
-                <div class="tirada">
-                    <img src="img/Mich.jpg" alt="Talismán de Protección">
-                    <h2>Talismán de Protección y Luz</h2>
-                </div>
-                </div>`;
-            break;
         case 'tiradas':
             contenido = `
                 <div class="catalogo-container">
@@ -271,6 +252,41 @@ function cargarContenido(seccion) {
             <a href="#" onclick="cargarContenido('inicio')" class="btn-volver">Volver a Inicio</a>
             </div>`;
             break;
+        case 'disponibilidad':
+            contenido = `
+    <div class="disponibilidad-container">
+        <h1>Horarios disponibles</h1>
+        <div id="lecturas">
+            <div id="lunes" class="day">
+                <h2>Lunes:</h2>
+                <p>Mañana: 10:00, 11:00, 12:00</p>
+                <p>Noche: 22:00, 23:00, 24:00</p>
+            </div>
+            <div id="martes" class="day">
+                <h2>Martes:</h2>
+                <p>Mañana: 10:00, 11:00, 12:00</p>
+                <p>Tarde: 15:00, 16:00, 17:00</p>
+                <p>Noche: 22:00, 23:00, 24:00</p>
+            </div>
+            <div id="miercoles" class="day">
+                <h2>Miércoles:</h2>
+                <p>Mañana: 10:00, 11:00, 12:00</p>
+                <p>Tarde: 15:00, 16:00</p>
+                <p>Noche: 22:00, 23:00, 24:00</p>
+            </div>
+            <div id="jueves" class="day">
+                <h2>Jueves y Viernes:</h2>
+                <p>Mañana: 10:00, 11:00, 12:00</p>
+                <p>Noche: 22:00, 23:00, 24:00</p>
+            </div>
+            <div id="sabado" class="day">
+                <h2>Sábados y Domingos:</h2>
+                <p>Mañana: 10:00, 11:00, 12:00</p>
+                <p>Tarde: 15:00 - 23:00</p>
+            </div>
+        </div>
+    </div>`;
+            break;
         case 'contacteme':
             contenido = `
                     <h1 style="margin-bottom: 20px; font-family: 'Afacad Flux', serif;">Contácteme</h1>
@@ -306,7 +322,7 @@ function cargarContenido(seccion) {
     document.getElementById('contenidoPrincipal').innerHTML = contenido;
 }
 
-  
+
 document.addEventListener('DOMContentLoaded', function () {
     // Cargar la página de inicio por defecto
     cargarContenido('inicio');  // Aquí cambiamos 'tiradas' por 'inicio'
