@@ -290,7 +290,6 @@ function cargarContenido(seccion) {
                     </div>
                 </div>
             </div>
-            <a href="javascript:void(0)" onclick="cargarContenido('inicio')" class="btn-volver">Volver a Inicio</a>
             </div>`;
             break;
         case 'disponibilidad':
