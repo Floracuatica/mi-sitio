@@ -194,7 +194,7 @@ function cargarContenido(seccion) {
                 <h1>¿No estás seguro de qué preguntar?<br></h1><h5>No olvides pasar tu cursor por encima o presionar desde celulares para leer el contenido<br></h5>
                 <div id="tiradasContainer" class="catalogo">
                 <div class="tirada tirada-bonita">
-                    <h2>El Cuadrado del Amor</h2>
+                    <h2>Cuadrado del Amor</h2>
                      <div class="info">
                 <p>Cómo me ve mi pareja.<br>Sus sentimientos.<br>Lo que interfiere.<br>Puntos fuertes de la pareja.<br>Consejo.</p>
             </div>
