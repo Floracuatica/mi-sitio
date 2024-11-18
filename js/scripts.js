@@ -238,7 +238,7 @@ function cargarContenido(seccion) {
                 <div class="tirada tirada-bonita">
                     <h2>Lectura Kármica</h2>
                     <div class="info">
-                    <p>Usted.<br>Lo que debe vivir y aprender.br>Cómo se manifiesta en su vida.<br>Consejo de la divinidad.<br>
+                    <p>Usted.<br>Lo que debe vivir y aprender.<br>Cómo se manifiesta en su vida.<br>Consejo de la divinidad.<br>
                     </div>
                 </div>
                 <div class="tirada tirada-bonita">
