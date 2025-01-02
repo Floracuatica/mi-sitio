@@ -327,7 +327,7 @@ function cargarContenido(seccion) {
         </div>
     </div>`;
             break;
-        case 'contacteme':
+       case 'contacteme':
     contenido = `
         <h1 style="margin-bottom: 20px; font-family: 'Afacad Flux', serif;">Contácteme</h1>
         <p style="font-family: 'Afacad Flux', serif; padding: 10px; margin-left: 20px; margin-right: 20px; text-align: justify;">
@@ -336,20 +336,6 @@ function cargarContenido(seccion) {
         El proceso es sencillo: contácteme vía WhatsApp por escrito para coordinar el horario, realizar el pago y una vez confirmado, le llamo de manera telefónica, garantizando total privacidad y comodidad.
         </p>
 
-        <!-- Formulario de contacto -->
-        <form id="formContacto">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
-
-            <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="mensaje" required></textarea>
-
-            <button type="submit">Enviar</button>
-        </form>
-
-        <p id="respuesta" style="margin-top: 20px;"></p>
-
-        <!-- Botón de WhatsApp -->
         <div style="text-align: center; margin: 20px 0;">
             <a href="https://wa.me/56949378439?text=Hola,%20quiero%20una%20lectura%20de%20Tarot." 
                class="whatsapp-button" 
@@ -357,19 +343,12 @@ function cargarContenido(seccion) {
                Contáctame en WhatsApp
             </a>
         </div>
+
+        <p id="respuesta" style="margin-top: 20px;"></p>
     `;
 
-    // Mostrar el contenido primero
     document.getElementById('contenidoPrincipal').innerHTML = contenido;
-
-    // Ahora que el formulario existe, agrega el event listener
-    const form = document.getElementById('formContacto');
-    form.addEventListener('submit', function (event) {
-        event.preventDefault();
-        document.getElementById('respuesta').textContent = "Enviando...";
-    });
     break;
-
 
     }
     document.getElementById('contenidoPrincipal').innerHTML = contenido;
