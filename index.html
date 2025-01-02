@@ -96,6 +96,19 @@
             </div>
         </div>
     </div>
+
+     <!-- Audio para el efecto de sonido -->
+    <audio id="clickSound" src="audio/tarot-sound.mp3"></audio>
+
+    <!-- Script para reproducir el sonido -->
+    <script>
+        function playSound() {
+            const sound = document.getElementById('clickSound');
+            sound.currentTime = 0;  // Reinicia el audio si se presiona rápidamente
+            sound.play();
+        }
+    </script>
+
     <script src="js/scripts.js"></script>
 
      <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
