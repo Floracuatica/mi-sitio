@@ -328,34 +328,47 @@ function cargarContenido(seccion) {
     </div>`;
             break;
         case 'contacteme':
-            contenido = `
-                    <h1 style="margin-bottom: 20px; font-family: 'Afacad Flux', serif;">Contácteme</h1>
-                    <p style="font-family: 'Afacad Flux', serif; padding: 10px; margin-left: 20px; margin-right: 20px; text-align: justify;">
-                    Si lo que busca es una lectura personalizada desde la comodidad de donde se encuentre, puede solicitar una por $15.000 CLP. 
-                    La sesión dura 30 minutos, y también tiene la opción de elegir una hora por $30.000 CLP. 
-                    El proceso es sencillo: contácteme vía WhatsApp por escrito para coordinar el horario, realizar el pago y una vez confirmado, le llamo de manera telefónica, garantizando total privacidad y comodidad.
-                    </p>
-                    <!-- Contenedor para centrar el botón -->
-            <div style="text-align: center; margin: 20px 0;">
+    contenido = `
+        <h1 style="margin-bottom: 20px; font-family: 'Afacad Flux', serif;">Contácteme</h1>
+        <p style="font-family: 'Afacad Flux', serif; padding: 10px; margin-left: 20px; margin-right: 20px; text-align: justify;">
+        Si lo que busca es una lectura personalizada desde la comodidad de donde se encuentre, puede solicitar una por $15.000 CLP. 
+        La sesión dura 30 minutos, y también tiene la opción de elegir una hora por $30.000 CLP. 
+        El proceso es sencillo: contácteme vía WhatsApp por escrito para coordinar el horario, realizar el pago y una vez confirmado, le llamo de manera telefónica, garantizando total privacidad y comodidad.
+        </p>
+
+        <!-- Formulario de contacto -->
+        <form id="formContacto">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        <p id="respuesta" style="margin-top: 20px;"></p>
+
+        <!-- Botón de WhatsApp -->
+        <div style="text-align: center; margin: 20px 0;">
             <a href="https://wa.me/56949378439?text=Hola,%20quiero%20una%20lectura%20de%20Tarot." 
-            class="whatsapp-button" 
-            style="display: inline-block; padding: 10px 20px; background-color: #25d366; color: white; border-radius: 5px; text-decoration: none;">
-            Contáctame en WhatsApp
+               class="whatsapp-button" 
+               style="display: inline-block; padding: 10px 20px; background-color: #25d366; color: white; border-radius: 5px; text-decoration: none;">
+               Contáctame en WhatsApp
             </a>
         </div>
-            
-                    <p id="respuesta" style="margin-top: 20px;"></p>
-                `;
+    `;
 
-            // Mostrar el contenido primero
-            document.getElementById('contenidoPrincipal').innerHTML = contenido;
+    // Mostrar el contenido primero
+    document.getElementById('contenidoPrincipal').innerHTML = contenido;
 
-            // Escuchar el evento submit del formulario
-            document.getElementById('formContacto').addEventListener('submit', function (event) {
-                event.preventDefault(); // Detener la acción predeterminada del formulario
-                document.getElementById('respuesta').textContent = "Enviando...";
-            });
-            break;
+    // Ahora que el formulario existe, agrega el event listener
+    const form = document.getElementById('formContacto');
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        document.getElementById('respuesta').textContent = "Enviando...";
+    });
+    break;
 
 
     }
