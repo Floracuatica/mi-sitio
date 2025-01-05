@@ -10,8 +10,8 @@ function cargarContenido(seccion) {
             <!-- Sección de 4 íconos con palabras debajo -->
             <div class="icon-bar">
             <div class="icon-item">
-            <img src="img/integ.jpg" alt="Integridad" class="icon-circle">
-            <p>Integridad</p>
+            <a href="alma/horoscopo.html"><img src="img/integ.jpg" alt="Horóscopo diario" class="icon-circle"></a>
+            <p>Tu horóscopo diario</p>
             </div>
             <div class="icon-item">
             <img src="img/sinceri.jpg" alt="Sinceridad" class="icon-circle">
