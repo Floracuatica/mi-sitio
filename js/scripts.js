@@ -22,8 +22,8 @@ function cargarContenido(seccion) {
             <p>Confianza</p>
             </div>
             <div class="icon-item">
-            <img src="img/commitment.jpg" alt="Compromiso" class="icon-circle">
-            <p>Compromiso</p>
+            <a href="alma/carta_diaria.html"><img src="img/integ.jpg" alt="Carta diaria" class="icon-circle"></a>
+            <p>Tu carta diaria</p>
             </div>
             </div>
 
