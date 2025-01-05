@@ -11,7 +11,7 @@ function cargarContenido(seccion) {
             <div class="icon-bar">
             <div class="icon-item">
             <a href="alma/horoscopo.html"><img src="img/integ.jpg" alt="Horoscopo" class="icon-circle"></a>
-            <p>Tu horóscopo diario</p>
+            <p>Horóscopo diario</p>
             </div>
             <div class="icon-item">
             <img src="img/sinceri.jpg" alt="Sinceridad" class="icon-circle">
@@ -241,7 +241,7 @@ function cargarContenido(seccion) {
         break;
         case 'contacto':
             contenido = `
-            <h1 style="margin-bottom: 20px; font-family: 'Afacad Flux', serif;">Contácteme</h1>
+            <h1 style="margin-bottom: 20px; font-family: 'Afacad Flux', serif;">Contacto</h1>
             <p style="font-family: 'Afacad Flux', serif; padding: 10px; margin-left: 20px; margin-right: 20px; text-align: justify;">
             Si lo que busca es una lectura personalizada desde la comodidad de donde se encuentre, puede solicitar una por $15.000 CLP. 
             La sesión dura 30 minutos, y también tiene la opción de elegir una hora por $30.000 CLP. 
