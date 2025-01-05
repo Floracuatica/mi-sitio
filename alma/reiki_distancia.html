@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sesión de Reiki a distancia para sanación y relajación desde tu hogar.">
+    <title>Reiki a Distancia - Sanación desde tu Hogar</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(180deg, #e63946, #f77f00, #fcbf49, #90be6d, #457b9d, #574ae2, #9b5de5);
+            color: #fff;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 50px auto;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        h1,
+        h2 {
+            color: #fff;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .highlight {
+            color: #ffe985;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 30px 15px 0 0;
+            padding: 14px 30px;
+            background: linear-gradient(145deg, #f4a261, #e76f51);
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: linear-gradient(145deg, #e76f51, #d85743);
+        }
+
+        .btn.secondary {
+            background: linear-gradient(145deg, #48cae4, #0077b6);
+            border: 1px solid #0077b6;
+        }
+
+        .btn.secondary:hover {
+            background: linear-gradient(145deg, #0077b6, #023e8a);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li::before {
+            content: '🌀 ';
+            color: #ffe985;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #fffae6;
+        }
+
+        .price {
+            font-size: 20px;
+            color: #ffe985;
+            margin-top: 20px;
+            font-weight: bold;
+            display: none;
+        }
+        .promo {
+            margin-top: 20px;
+            padding: 15px;
+            border: 2px solid #ffe985;
+            border-radius: 8px;
+            background-color: rgba(255, 249, 196, 0.2);
+            color: #ffe985;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Reiki a Distancia – Sanación y Equilibrio Energético</h1>
+        <p>Permite que la energía fluya a través de ti y restaure tu equilibrio natural.</p>
+
+        <h2>¿Qué es el Reiki?</h2>
+        <p>El <span class="highlight">Reiki</span> es una terapia de sanación energética que promueve la <span
+                class="highlight">relajación profunda</span>, ayuda a aliviar el estrés y restaura el balance físico y
+            emocional. Es una técnica segura y universal, adecuada para cualquier persona, incluso animales.</p>
+
+        <h2>¿Cómo funciona el Reiki a Distancia?</h2>
+        <p>El Reiki trasciende el espacio físico. Durante una sesión a distancia, la energía llega hasta ti dondequiera
+            que estés, guiada por la intención del terapeuta y la apertura del receptor. Solo necesitas estar en un
+            lugar tranquilo y permitir que la energía fluya.</p>
+
+        <h2>Beneficios del Reiki a Distancia:</h2>
+        <ul>
+            <li>🌀 Alivio del estrés y la ansiedad</li>
+            <li>🌀 Mejora del sueño</li>
+            <li>🌀 Aumento de energía y vitalidad</li>
+            <li>🌀 Sanación emocional y espiritual</li>
+            <li>🌀 Equilibrio de los chakras</li>
+        </ul>
+
+        <h2>Preparativos para tu Sesión</h2>
+        <p><strong>Para maximizar los beneficios, sigue estos pasos:</strong></p>
+        <ul>
+            <li>Elige un lugar donde te sientas cómod@ y sin distracciones.</li>
+            <li>Apaga dispositivos electrónicos o ponlos en silencio.</li>
+            <li>Recuéstate o siéntate cómodamente con los ojos cerrados.</li>
+            <li>Permite que la energía fluya sin expectativas, solo relájate.</li>
+        </ul>
+
+        <p>Cuando finalice la sesión, te contactaré para saber cómo te sientes y compartir impresiones. 😊</p>
+
+        <!-- Sección de precios dinámica -->
+        <div>
+            <h2>Consulta el Precio</h2>
+            <p>Haz clic para conocer el precio de tu sesión de Reiki.</p>
+            <button class="btn" onclick="mostrarPrecio()">Mostrar Precio</button>
+            <div id="precio" class="price">
+                Sesión de Reiki: $25.000 CLP
+                <div class="promo">
+                    ⭐ Promoción: Pack de 3 sesiones (válido por 1 semana) - <span class="highlight">$45.000 CLP</span> ⭐
+                </div>
+            </div>
+        </div>
+
+        <!-- Botones de contacto y regreso -->
+        <a href="https://wa.me/56949378439?text=Quiero%20una%20sesi%C3%B3n%20de%20Reiki" class="btn">Reserva tu Sesión
+            Ahora</a>
+        <a href="../index.html" class="btn secondary">Regresar al Inicio</a>
+
+        <div class="footer">
+            ✨ Tu bienestar comienza desde el interior. Confía en la energía del universo. ✨
+        </div>
+    </div>
+
+    <script>
+        function mostrarPrecio() {
+            var precioElemento = document.getElementById('precio');
+
+            // Cambiar visibilidad del precio
+            if (precioElemento.style.display === 'none' || precioElemento.style.display === '') {
+                precioElemento.style.display = 'block';
+            } else {
+                precioElemento.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>
