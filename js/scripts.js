@@ -59,7 +59,7 @@ function cargarContenido(seccion) {
         
         <!-- Rider-Waite-Smith -->
         <div class="tirada">
-            <a href="rider-waite.html">
+            <a href="paginas/rider-waite.html">
                 <img src="img/ryder.jpg" alt="Ryder Waite">
                 <h2>Tarot Rider Waite</h2>
             </a>
@@ -67,7 +67,7 @@ function cargarContenido(seccion) {
 
         <!-- Tarot de Marsella -->
         <div class="tirada">
-            <a href="marsella.html">
+            <a href="paginas/marsella.html">
                 <img src="img/marsella.jpg" alt="Tarot de Marsella">
                 <h2>Tarot de Marsella</h2>
             </a>
@@ -75,7 +75,7 @@ function cargarContenido(seccion) {
 
         <!-- Tarot de Thoth -->
         <div class="tirada">
-            <a href="thoth.html">
+            <a href="paginas/thoth.html">
                 <img src="img/thoth.jpg" alt="Tarot de Thoth">
                 <h2>Tarot de Thoth</h2>
             </a>
@@ -83,7 +83,7 @@ function cargarContenido(seccion) {
 
         <!-- Tarot Osho Zen -->
         <div class="tirada">
-            <a href="osho.html">
+            <a href="paginas/osho.html">
                 <img src="img/osho.jpg" alt="Tarot Osho Zen">
                 <h2>Tarot Osho Zen</h2>
             </a>
@@ -91,7 +91,7 @@ function cargarContenido(seccion) {
 
         <!-- Tarot de los Cuervos -->
         <div class="tirada">
-            <a href="cuervos.html">
+            <a href="paginas/cuervos.html">
                 <img src="img/crow.jpg" alt="Tarot de los Cuervos">
                 <h2>Tarot de los Cuervos</h2>
             </a>
@@ -99,7 +99,7 @@ function cargarContenido(seccion) {
 
         <!-- Tarot de los Gatos (Grimalkin) -->
         <div class="tirada">
-            <a href="grimalkin.html">
+            <a href="paginas/grimalkin.html">
                 <img src="img/grim.jpg" alt="Tarot de Grimalkin">
                 <h2>Tarot de los Gatos (Grimalkin)</h2>
             </a>
@@ -107,7 +107,7 @@ function cargarContenido(seccion) {
 
         <!-- Tarot de Klimt -->
         <div class="tirada">
-            <a href="klimt.html">
+            <a href="paginas/klimt.html">
                 <img src="img/cuando.jpg" alt="Tarot de Klimt">
                 <h2>Tarot de Klimt</h2>
             </a>
@@ -115,7 +115,7 @@ function cargarContenido(seccion) {
 
         <!-- Tarot de los Vitrales (Cloisters) -->
         <div class="tirada">
-            <a href="vitrales.html">
+            <a href="paginas/vitrales.html">
                 <img src="img/compas.jpg" alt="Tarot de los Vitrales">
                 <h2>Tarot de los Vitrales</h2>
             </a>
@@ -133,13 +133,13 @@ function cargarContenido(seccion) {
         
             <!-- Reiki a Distancia -->
             <div class="tirada">
-            <a href="reiki_distancia.html">
+            <a href="paginas/reiki_distancia.html">
                 <img src="img/reiki.jpg" alt="Reiki a Distancia">
                 <h2>👐 Reiki a distancia</h2></a>
             </div>
             <!-- Aqualead -->
             <div class="tirada">
-            <a href="aqualead.html">
+            <a href="paginas/aqualead.html">
                 <img src="img/aqui.jpg" alt="Terapia Aqualead">
                 <h2>🌊 Aqualead</h2>
             </a>
@@ -147,7 +147,7 @@ function cargarContenido(seccion) {
         
             <!-- Registros Akáshicos -->
             <div class="tirada">
-            <a href="akashicos.html">
+            <a href="paginas/akashicos.html">
                 <img src="img/akashian.jpg" alt="Lectura de Registros Akáshicos">
                 <h2>✨ Registros Akáshicos</h2>
             </a>
@@ -163,7 +163,7 @@ function cargarContenido(seccion) {
                         <!-- Protección contra Energías Nocturnas -->
                         <div class="tirada">
                             <h2>🌙 Protección contra Energías Nocturnas</h2>
-                            <a href="taller.html">
+                            <a href="paginas/taller.html">
                             <img src="img/dist.jpg" alt="Protección">
                             </a>
                         </div>
@@ -171,7 +171,7 @@ function cargarContenido(seccion) {
                         <!-- Creación de Altares -->
                         <div class="tirada">
                             <h2>🕯️ Creación de Altares</h2>
-                            <a href="altares.html">
+                            <a href="paginas/altares.html">
                             <img src="img/reg.jpg" alt="Altares">
                             </a>
                         </div>
@@ -179,7 +179,7 @@ function cargarContenido(seccion) {
                         <!-- Creación de Muñecas Mágicas -->
                         <div class="tirada">
                             <h2>🧸 Creación de Muñecas Mágicas</h2>
-                            <a href="spirit_doll.html">
+                            <a href="paginas/spirit_doll.html">
                             <img src="img/tar.jpg" alt="Muñeca Mágica">
                             </a>
                         </div>
@@ -187,7 +187,7 @@ function cargarContenido(seccion) {
                         <!-- Corte de Lazos Energéticos y Emocionales -->
                         <div class="tirada">
                             <h2>🌿 Corte de Lazos Energéticos</h2>
-                            <a href="corte_lazos.html">
+                            <a href="paginas/corte_lazos.html">
                             <img src="img/aqua.jpg" alt="Corte">
                             </a>
                         </div>
@@ -378,5 +378,4 @@ document.addEventListener('DOMContentLoaded', function () {
     cargarContenido('inicio');  // Aquí cambiamos 'tiradas' por 'inicio'
 });
 
-    cargarContenido('inicio');  // Aquí cambiamos 'tiradas' por 'inicio'
-});
+
