@@ -259,6 +259,15 @@ function cargarContenido(seccion) {
         break;
         }
     document.getElementById('contenidoPrincipal').innerHTML = contenido;
+    if (window.innerWidth <= 768) {
+        setTimeout(function () {
+            window.scrollBy({
+                top: 200,
+                behavior: 'smooth'
+            });
+        }, 200);
+    }
+    
 }
 
 document.addEventListener('DOMContentLoaded', function () {

@@ -511,3 +511,29 @@ a:hover {
 .about-me-link:hover .about-me-text {
     color: #c2185b;  /* Cambia de color al pasar el cursor */
 }
+.scroll-indicator, .scroll-to-top {
+    text-align: center;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
+/* Ocultar por defecto para pantallas grandes */
+.scroll-indicator, .scroll-to-top {
+    display: none;
+}
+
+/* Mostrar solo en pantallas menores a 768px */
+@media (max-width: 768px) {
+    .scroll-indicator {
+        bottom: 10px;
+        display: block;
+    }
+
+    .scroll-to-top {
+        bottom: 30px;
+        cursor: pointer;
+    }
+}
+
