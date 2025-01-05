@@ -115,7 +115,7 @@ function cargarContenido(seccion) {
             <div class="catalogo">        
             <!-- Protección contra Energías Nocturnas -->
             <div class="tirada">
-            <h2>🌙 Protección contra Energías Nocturnas</h2><a href="paginas/taller.html"><img src="img/dist.jpg" alt="Protección"></a>
+            <h2>🌙 Protección contra Energías Nocturnas</h2><a href="alma/taller.html"><img src="img/dist.jpg" alt="Protección"></a>
             </div>
             <!-- Creación de Altares -->
             <div class="tirada">
