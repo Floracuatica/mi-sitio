@@ -86,16 +86,23 @@ body {
 /* Estilo de cada tirada */
 .tirada {
     background-color: #fff;
-    padding: 10px;
+    padding: 15px;
     text-align: center;
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto;
+    position: relative;
 }
 
+/* Ajuste para imágenes de tiradas regulares */
 .tirada img {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
     border-radius: 10px;
 }
 
@@ -220,20 +227,6 @@ a:hover {
     background-color: #52be80;
 }
 
-.catalogo {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.tirada {
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
 .pagination {
     text-align: center;
     margin-top: 20px;
@@ -289,38 +282,6 @@ a:hover {
     margin-bottom: 20px; /* Espacio inferior entre el botón y otros elementos */
 }
 
-/* Ajustar el estilo de los contenedores */
-.tirada {
-    width: 210px; /* Tamaño ajustado */
-    margin: 10px; /* Reducir el espacio entre los contenedores */
-    position: relative;
-    text-align: center;
-}
-
-/* Ajustar el grid para que los contenedores queden más juntos */
-.catalogo {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajuste automático de columnas */
-    gap: 20px;
-    width: 80%;
-    margin: 0 auto;
-}
-
-/* Ajustes de las imágenes y el texto */
-.tirada img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.tirada h2 {
-    text-align: center;
-    margin-top: 10px;
-    font-size: 1.2em;
-    color: #333; /* Texto gris oscuro */
-}
-/* Estilo para las descripciones de los mazos */
 .info {
     display: none; /* Oculta las descripciones por defecto */
     position: absolute;
@@ -340,14 +301,6 @@ a:hover {
 /* Mostrar la descripción al pasar el cursor sobre el mazo */
 .tirada:hover .info {
     display: block;
-}
-
-/* Asegurar que las cartas se mantengan correctamente alineadas */
-.tirada {
-    width: 210px;
-    position: relative;
-    text-align: center;
-    margin-bottom: 40px; /* Para evitar que las descripciones se superpongan con otras cartas */
 }
 
 .icon-bar {
@@ -489,64 +442,41 @@ a:hover {
     }
 }
 
-/* Asegurar que las tiradas se alineen de manera más compacta */
-.catalogo {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Ajuste automático de columnas */
-    gap: 10px; /* Reducir el espacio entre los cuadraditos */
-    width: 90%;
-    margin: 0 auto;
-}
 
 /* Asegurarnos de que .tirada-bonita sea más compacta */
 .tirada-bonita {
-    background-image: url('../img/deb.jpg'); /* Fondo nacarado */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 8px; /* Reducir el padding */
-    border-radius: 12px; /* Bordes redondeados más pequeños */
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1); /* Sombra más ligera */
-    border: 1px solid #ddd;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 130px; /* Cuadraditos más pequeños */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    background-color: #fff;
+    padding: 15px;
     text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: visible;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto;
     position: relative;
-    z-index: 1;
 }
 
 /* Mantener el contenido alineado y centrado */
 .tirada-bonita .info {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    display: none; /* Oculta las descripciones por defecto */
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(255, 255, 255, 0.9);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 12px;
-    padding: 10px; /* Reducir el padding interno */
-    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 250px;
+    top: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 10;
+    font-size: 0.9em;
 }
 
 /* Ajustes para hover */
 .tirada-bonita:hover .info {
-    opacity: 1;
-    visibility: visible;
+    display: block;
 }
 
-.tirada-bonita:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    z-index: 5;
-}
