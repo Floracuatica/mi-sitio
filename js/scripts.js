@@ -7,25 +7,36 @@ function cargarContenido(seccion) {
             <div class="intro-section">
             <h1><br><br>Bienvenido a Tarot Vía: Conecte con su energía interior</h1>
             <p>Lecturas de tarot personalizadas.</p>
+
             <!-- Sección de 4 íconos con palabras debajo -->
             <div class="icon-bar">
             <div class="icon-item">
-            <a href="alma/horoscopo.html"><img src="img/integ.jpg" alt="Horoscopo" class="icon-circle"></a>
+            <a href="alma/horoscopo.html">
+                <img src="img/integ.jpg" alt="Horoscopo" class="icon-circle">
+            </a>
             <p>Horóscopo diario</p>
             </div>
             <div class="icon-item">
-            <img src="img/sinceri.jpg" alt="Sinceridad" class="icon-circle">
-            <p>Sinceridad</p>
+            <a href="alma/cristal.html">
+                <img src="img/sinceri.jpg" alt="Cristal" class="icon-circle">
+            </a>
+            <p>El Cristal de hoy</p>
             </div>
             <div class="icon-item">
-            <img src="img/trust.jpg" alt="Confianza" class="icon-circle">
-            <p>Confianza</p>
+            <a href="alma/consejo.html">
+                <img src="img/trust.jpg" alt="Consejo mágico de hoy" class="icon-circle">
+            </a>
+            <p>Consejo mágico de hoy</p>
             </div>
             <div class="icon-item">
-            <a href="alma/carta_diaria.html"><img src="img/integ.jpg" alt="Carta diaria" class="icon-circle"></a>
+            <a href="alma/carta_diaria.html">
+                <img src="img/commitment.jpg" alt="Carta diaria" class="icon-circle">
+            </a>
             <p>Tu carta diaria</p>
             </div>
             </div>
+            </div>
+
 
             <div class="services">
             <h2>Servicios</h2>

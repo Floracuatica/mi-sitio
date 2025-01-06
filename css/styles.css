@@ -325,9 +325,13 @@ a:hover {
 
 .icon-item p {
     margin-top: 10px;
-    font-size: 16px;
-    color: #333;
+    font-size: 1rem;
+    max-width: 100px;  /* Mantiene los textos uniformes */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
+
 @font-face {
     font-family: 'Afacad Flux';
     src: url('ruta-a-la-fuente/AfacadFlux.woff') format('woff'),
