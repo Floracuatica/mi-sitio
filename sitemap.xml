@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+    <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 
-<url>
-  <loc>https://tarotvia.cl/</loc>
-  <lastmod>2025-01-06T01:09:01+00:00</lastmod>
-</url>
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://tarotvia.cl/</loc>
+        <lastmod>2025-01-06T01:09:01+00:00</lastmod>
+    </url>
     <url>
         <loc>https://tarotvia.cl/</loc>
         <lastmod>2025-01-06T01:09:01+00:00</lastmod>
@@ -125,7 +121,5 @@
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
-</urlset>
-
 
 </urlset>
