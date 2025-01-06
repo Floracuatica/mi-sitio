@@ -485,36 +485,40 @@ a:hover {
 }
 .about-me-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin: 30px 0;
 }
 
 .about-me-link {
     display: flex;
+    flex-direction: column;
     align-items: center;
     text-decoration: none;
     color: #4a235a;
-    font-weight: bold;
-    font-size: 1.2em;
+    font-weight: normal;
+    font-size: 1em;
 }
 
 .about-me-icon {
     width: 60px;  /* Tamaño del ícono */
     height: 60px;
     border-radius: 50%;  /* Hace que la imagen sea circular */
-    margin-right: 10px;
-    border: 3px solid #6a0572;  /* Borde alrededor */
+    margin-bottom: 10px;
+    border: 2px solid #6a0572;  /* Borde alrededor */
     object-fit: cover;
 }
 
 .about-me-text {
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     transition: color 0.3s ease;
+    text-align: center;
 }
 
 .about-me-link:hover .about-me-text {
     color: #c2185b;  /* Cambia de color al pasar el cursor */
 }
+
 .scroll-indicator, .scroll-to-top {
     text-align: center;
     position: fixed;

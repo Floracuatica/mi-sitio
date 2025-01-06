@@ -14,25 +14,25 @@ function cargarContenido(seccion) {
             <a href="alma/horoscopo.html">
                 <img src="img/integ.jpg" alt="Horoscopo" class="icon-circle">
             </a>
-            <p>Tu horóscopo diario</p>
+            <p>Tu Horóscopo<br>diario</p>
             </div>
             <div class="icon-item">
             <a href="alma/cristal.html">
                 <img src="img/sinceri.jpg" alt="Cristal" class="icon-circle">
             </a>
-            <p>El Cristal de hoy</p>
+            <p>El Cristal <br>de hoy</p>
             </div>
             <div class="icon-item">
             <a href="alma/consejo.html">
                 <img src="img/trust.jpg" alt="Consejo mágico de hoy" class="icon-circle">
             </a>
-            <p>Consejo mágico de hoy</p>
+            <p>Consejo <br>mágico</p>
             </div>
             <div class="icon-item">
             <a href="alma/carta_diaria.html">
                 <img src="img/commitment.jpg" alt="Carta diaria" class="icon-circle">
             </a>
-            <p>Tu carta diaria</p>
+            <p>Carta <br>diaria</p>
             </div>
             </div>
             </div>
