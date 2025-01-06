@@ -70,6 +70,32 @@
             font-size: 0.9em;
             color: #f4e1d2;
         }
+        .price {
+            font-size: 22px;
+            color: #ffe985;
+            margin-top: 20px;
+            font-weight: bold;
+            display: none;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .price.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .price.hide {
+            opacity: 0;
+            transform: translateY(-20px);
+            display: none;
+        }
+
     </style>
 </head>
 <body>
@@ -102,9 +128,32 @@
             <li>Mantén el corazón y la mente abiertos a recibir mensajes.</li>
             <li>Haz preguntas claras y con intención.</li>
         </ul>
-
         <p>Al finalizar, la misma respuesta te guiará en el proceso de integración para asegurar que la información resuene contigo de forma armoniosa.</p>
         
+        <!-- Sección de precios dinámica -->
+        <div>
+            <h2>Consulta el Precio</h2>
+            <p>Haz clic para conocer el precio de tu sesión de Registros Akashicos.</p>
+            <button class="btn" onclick="mostrarPrecio()">Mostrar Precio</button>
+            <div id="precio" class="price">
+                Sesión: $30.000 CLP
+            </div>
+        </div>
+
+        <script>
+            function mostrarPrecio() {
+                var precioElemento = document.getElementById('precio');
+
+                if (precioElemento.classList.contains('show')) {
+                    precioElemento.classList.remove('show');
+                    precioElemento.classList.add('hide');
+                } else {
+                    precioElemento.classList.remove('hide');
+                    precioElemento.classList.add('show');
+                }
+            }
+        </script>
+
         <a href="https://wa.me/56949378439?text=Quiero%20una%20sesi%C3%B3n%20de%20Registros%20Ak%C3%A1shicos" class="btn">Reserva tu Sesión</a>
         <a href="../index.html" class="btn secondary">Volver al Inicio</a>
 
