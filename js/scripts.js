@@ -14,7 +14,7 @@ function cargarContenido(seccion) {
             <a href="alma/horoscopo.html">
                 <img src="img/integ.jpg" alt="Horoscopo" class="icon-circle">
             </a>
-            <p>Horóscopo diario</p>
+            <p>Tu horóscopo diario</p>
             </div>
             <div class="icon-item">
             <a href="alma/cristal.html">
