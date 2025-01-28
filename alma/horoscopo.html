@@ -7,84 +7,118 @@
     <title>Horóscopo Diario - Tarot Vía</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-    body {
-        font-family: 'Open Sans', sans-serif;
-        background: #f4e2d8; /* Color principal de tu sitio */
-        color: #4a235a; /* Texto morado oscuro como en tu tarot */
-        text-align: center;
-        padding: 20px;
-    }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: #f4e2d8;
+            /* Color principal de tu sitio */
+            color: #4a235a;
+            /* Texto morado oscuro como en tu tarot */
+            text-align: center;
+            padding: 20px;
+        }
 
-    h1 {
-        margin: 40px 0 30px;
-        font-family: 'Playfair Display', serif; /* Elegante pero mantiene legibilidad */
-        font-size: 2.3em;
-        color: #9b5de5; /* Púrpura de tu logo */
-        letter-spacing: 1px;
-    }
+        h1 {
+            margin: 40px 0 30px;
+            font-family: 'Playfair Display', serif;
+            /* Elegante pero mantiene legibilidad */
+            font-size: 2.3em;
+            color: #9b5de5;
+            /* Púrpura de tu logo */
+            letter-spacing: 1px;
+        }
 
-    .horoscopo-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-        max-width: 1300px;
-        margin: 30px auto;
-        padding: 15px;
-    }
+        .horoscopo-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1300px;
+            margin: 30px auto;
+            padding: 15px;
+        }
 
-    .signo {
-        padding: 25px;
-        background: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
-        border-radius: 12px;
-        box-shadow: 0 4px 20px rgba(155, 93, 229, 0.1); /* Sombra suave púrpura */
-        border: 1px solid #e8d0e7; /* Borde sutil rosado */
-        transition: all 0.3s ease;
-    }
+        .signo {
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.9);
+            /* Fondo blanco semi-transparente */
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(155, 93, 229, 0.1);
+            /* Sombra suave púrpura */
+            border: 1px solid #e8d0e7;
+            /* Borde sutil rosado */
+            transition: all 0.3s ease;
+        }
 
-    .signo:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 6px 25px rgba(155, 93, 229, 0.15);
-    }
+        .signo:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(155, 93, 229, 0.15);
+        }
 
-    .signo h3 {
-        margin: 0 0 15px;
-        font-family: 'Open Sans', sans-serif;
-        font-weight: 700;
-        font-size: 1.2em;
-        color: #6d28d9; /* Púrpura más intenso para contraste */
-        border-bottom: 2px solid #e8d0e7; /* Línea divisora rosada */
-        padding-bottom: 8px;
-    }
+        .signo h3 {
+            margin: 0 0 15px;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 700;
+            font-size: 1.2em;
+            color: #6d28d9;
+            /* Púrpura más intenso para contraste */
+            border-bottom: 2px solid #e8d0e7;
+            /* Línea divisora rosada */
+            padding-bottom: 8px;
+        }
 
-    .signo p {
-        margin: 0;
-        font-size: 0.95em;
-        line-height: 1.6;
-        color: #4a235a; /* Texto morado oscuro */
-    }
+        .signo p {
+            margin: 0;
+            font-size: 0.95em;
+            line-height: 1.6;
+            color: #4a235a;
+            /* Texto morado oscuro */
+        }
 
-    .btn {
-        display: inline-flex;
-        align-items: center;
-        padding: 12px 35px;
-        background: #607d8b; /* Verde-azulado de tu botón "Regresar" */
-        color: #fff !important;
-        border-radius: 25px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        text-decoration: none;
-        margin: 30px 10px;
-    }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 35px;
+            background: #607d8b;
+            /* Verde-azulado de tu botón "Regresar" */
+            color: #fff !important;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            margin: 30px 10px;
+        }
 
-    .btn:hover {
-        background: #4a636e; /* Ton más oscuro para hover */
-        transform: scale(1.02);
-    }
+        .btn:hover {
+            background: #4a636e;
+            /* Ton más oscuro para hover */
+            transform: scale(1.02);
+        }
 
-    /* Añade esto para mantener consistencia con tu tarot */
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
-</style>
-</head>
+        /* Efecto de brillo sutil en títulos */
+        h1 {
+            position: relative;
+            display: inline-block;
+        }
+
+        h1::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #e8d0e7;
+            /* Línea decorativa rosada */
+        }
+
+        /* Efecto de carga estelar en hover (sutil) */
+        .signo:hover {
+            background: linear-gradient(45deg, #fff 70%, #f8e3f0 100%);
+        }
+
+        /* Añade esto para mantener consistencia con tu tarot */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+    </style>
 </head>
 <body>
     <h1>Horóscopo Diario - 28 de enero de 2025</h1>
