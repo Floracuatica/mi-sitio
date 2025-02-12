@@ -35,9 +35,30 @@ function cargarContenido(seccion) {
             <p>Carta <br>diaria</p>
             </div>
             </div>
+            
+            <!-- Sección del flujo de lectura de tarot -->
+            <div class="flow-container" style="margin-top: 30px;">
+                <div class="box">🌙 ¿Necesitas una lectura? 🔮</div>
+                
+                <div class="box">💡 ¿Tienes preguntas?</div>
+                
+                <div class="decision">
+                    <button onclick="showNext('yes')">Sí ✨</button>
+                    <button onclick="showNext('no')">No ❔</button>
+                </div>
+                
+                <div id="yes-flow" style="display: none;">
+                    <div class="box">📅 Agenda tu lectura!</div>
+                    <a href="https://wa.me/56949378439" target="_blank">
+                        <button class="whatsapp-btn">📲 Agendar en WhatsApp</button>
+                    </a>
+                </div>
+                
+                <div id="no-flow" style="display: none;">
+                    <div class="box">🤔 Piensa tus preguntas</div>
+                    <button onclick="showNext('back')">Regresar 🔄</button>
+                </div>
             </div>
-
-
             <div class="services">
             <h2>Servicios</h2>
             <ul>
@@ -58,7 +79,7 @@ function cargarContenido(seccion) {
             </div>
 
             </div>`;
-        break;
+            break;
         case 'mazos':
             contenido = `
             <div class="catalogo-container">
@@ -98,7 +119,7 @@ function cargarContenido(seccion) {
             </div>
             </div>
             </div>`;
-        break;
+            break;
         case 'terapias':
             contenido = `
             <div class="catalogo-container">
@@ -118,7 +139,7 @@ function cargarContenido(seccion) {
             </div>
             </div>
             </div>`;
-        break;
+            break;
         case 'cursos':
             contenido = `
             <div class="catalogo-container">
@@ -145,7 +166,7 @@ function cargarContenido(seccion) {
             </div>
             </div>
             </div>`;
-        break;
+            break;
         case 'tiradas':
             contenido = `
             <div class="catalogo-container">
@@ -214,7 +235,7 @@ function cargarContenido(seccion) {
             </div>
             </div>
             </div>`;
-        break;          
+            break;
         case 'disponibilidad':
             contenido = `
             <div class="disponibilidad-container">
@@ -249,7 +270,7 @@ function cargarContenido(seccion) {
             </div>
             </div>
             </div>`;
-        break;
+            break;
         case 'contacto':
             contenido = `
             <h1 style="margin-bottom: 20px; font-family: 'Afacad Flux', serif;">Contacto</h1>
@@ -267,8 +288,8 @@ function cargarContenido(seccion) {
             </div>
             <p id="respuesta" style="margin-top: 20px;"></p>
             </div>`;
-        break;
-        }
+            break;
+    }
     document.getElementById('contenidoPrincipal').innerHTML = contenido;
     if (window.innerWidth <= 768) {
         setTimeout(function () {
@@ -278,11 +299,24 @@ function cargarContenido(seccion) {
             });
         }, 200);
     }
-    
+
 }
+
 
 document.addEventListener('DOMContentLoaded', function () {
     // Cargar la página de inicio por defecto
     cargarContenido('inicio');  // Aquí cambiamos 'tiradas' por 'inicio'
 });
 
+document.getElementById("contenido").innerHTML = contenido;
+
+function showNext(option) {
+    document.getElementById('yes-flow').style.display = 'none';
+    document.getElementById('no-flow').style.display = 'none';
+
+    if (option === 'yes') {
+        document.getElementById('yes-flow').style.display = 'block';
+    } else if (option === 'no') {
+        document.getElementById('no-flow').style.display = 'block';
+    }
+}
