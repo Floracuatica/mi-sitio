@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Portal de la Bruja</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>El Portal de la Bruja</h1>
+        <p>En un rincón olvidado de Asia, entre montes cubiertos de niebla y aldeas de madera, vivía una bruja. No era una bruja cualquiera, sino una viajera del tiempo, guardiana de un secreto oculto en las profundidades de una cueva ancestral. La energía del portal la llamaba en noches de luna velada, abriéndole caminos a otros siglos.</p>
+        <p>Fue así como descubrió la pescadería. Aquel mercado de madera, bullicioso y oloroso a mar, era un centro de actividad donde hombres y mujeres trabajaban con ropas azules, sus kimonos atados con sencillez. Entre ellos, un hombre la miraba con temor...</p>
+        <p>... Y en ese momento, en ese espacio entre decisiones, la bruja sintió algo quebrarse en su alma. Algo en su ser comenzó a desprenderse, a desvanecerse. Su mente traspasó los límites del tiempo y el sueño cambió de forma. Estaba flotando en la nada, en un espacio más allá de la vida y la muerte. Y una voz la llamó.</p>
+        <p>Era una voz femenina, suave, pero llena de un poder inmenso. "Soy tu verdadera madre. No como la madre de tu vida actual, sino tu madre espiritual, aquella que siempre ha estado contigo".</p>
+        <p>La voz vibró en cada fibra de su ser. "Te quiero a mi lado pronto".</p>
+        <p>Y entonces despertó.</p>
+    </div>
+</body>
+</html>
