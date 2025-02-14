@@ -24,7 +24,7 @@ function cargarContenido(seccion) {
             </div>
             <div class="icon-item">
             <a href="alma/tirada.html">
-                <img src="img/trust.jpg" alt="Tu carta del destino" class="icon-circle">
+                <img src="img/trust.jpg" alt="Tu carta de destino" class="icon-circle">
             </a>
             <p>Tu carta <br>de destino</p>
             </div>
