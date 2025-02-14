@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Explora el místico Tarot de Thoth, diseñado por Aleister Crowley y Lady Frieda Harris, una herramienta de transformación y autodescubrimiento.">
+    <title>Tarot de Thoth</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;500&display=swap');
+
+        body {
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+            padding: 0;
+            background: url('../img/fo.webp') no-repeat center center;
+            background-size: cover;
+            /* Asegura que el fondo cubra toda la pantalla */
+            background-attachment: fixed;
+            /* Mantiene el fondo fijo al hacer scroll */
+            min-height: 100vh;
+            /* Asegura que el fondo cubra toda la pantalla */
+            color: #0b0d0f;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background-color: rgba(35, 25, 55, 0.95);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            border-radius: 12px;
+        }
+
+        h1,
+        h2 {
+            color: #ca32d8;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .highlight {
+            color: #ffccff;
+            font-weight: bold;
+        }
+
+        .card-container {
+            background: rgba(255, 225, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        #cartaImagen {
+            width: 250px;
+            height: auto;
+            display: none;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.5);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(218, 206, 245, 0.95);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 24px;
+            background: #ff6bcb;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .btn:hover {
+            background: #ddb0c0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card-container">
+        <h1>Tu Carta de Destino</h1>
+        <p>Introduce tu fecha de nacimiento:</p>
+        <input type="date" id="fechaNacimiento" min="1932-01-01" max="2005-12-31">
+        <br><br>
+        <button onclick="calcularCarta()">Continuar</button>
+        <p id="cartaDestino"></p>
+        <div class="card-container"
+            style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <img id="cartaImagen" alt="Carta de destino">
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>Si deseas una interpretación personalizada de tu carta y cómo interfiere con tu vida, puedes realizar una
+            donación de un café en Ko-Fi y adjuntar tu mensaje con
+            tu nombre y correo para un envío y comunicación.</p>
+        <p>También puedes agendar una lectura más profunda a través de WhatsApp:</p>
+        <a href="https://wa.me/56949378439?text=Hola,%20quiero%20una%20lectura%20con%20el%20Tarot%20de%20Thoth"
+            class="btn">Agendar Lectura</a>
+        <a href="../index.html" class="btn">Regresar al Inicio</a>
+    </div>
+
+    <script>
+        const cartasTarot = [
+            { numero: 0, nombre: "El Loco", imagen: "../thoth/0.webp" },
+            { numero: 1, nombre: "El Mago", imagen: "../thoth/1.webp" },
+            { numero: 2, nombre: "La Sacerdotisa", imagen: "../thoth/2.webp" },
+            { numero: 3, nombre: "La Emperatriz", imagen: "../thoth/3.webp" },
+            { numero: 4, nombre: "El Emperador", imagen: "../thoth/4.webp" },
+            { numero: 5, nombre: "El Papa", imagen: "../thoth/5.webp" },
+            { numero: 6, nombre: "Los Enamorados", imagen: "../thoth/6.webp" },
+            { numero: 7, nombre: "El Carro", imagen: "../thoth/7.webp" },
+            { numero: 8, nombre: "La Justicia", imagen: "../thoth/8.webp" },
+            { numero: 9, nombre: "El Ermitaño", imagen: "../thoth/9.webp" },
+            { numero: 10, nombre: "La Rueda de la Fortuna", imagen: "../thoth/10.webp" },
+            { numero: 11, nombre: "La Fuerza", imagen: "../thoth/11.webp" },
+            { numero: 12, nombre: "El Colgado", imagen: "../thoth/12.webp" },
+            { numero: 13, nombre: "La Muerte", imagen: "../thoth/13.webp" },
+            { numero: 14, nombre: "La Templanza", imagen: "../thoth/14.webp" },
+            { numero: 15, nombre: "El Diablo", imagen: "../thoth/15.webp" },
+            { numero: 16, nombre: "La Torre", imagen: "../thoth/16.webp" },
+            { numero: 17, nombre: "La Estrella", imagen: "../thoth/17.webp" },
+            { numero: 18, nombre: "La Luna", imagen: "../thoth/18.webp" },
+            { numero: 19, nombre: "El Sol", imagen: "../thoth/19.webp" },
+            { numero: 20, nombre: "El Juicio", imagen: "../thoth/20.webp" },
+            { numero: 21, nombre: "El Mundo", imagen: "../thoth/21.webp" }
+        ];
+
+        function calcularCarta() {
+            let fechaInput = document.getElementById("fechaNacimiento").value.trim();
+            let suma = fechaInput.split('-').join('').split('').map(Number).reduce((a, b) => a + b, 0);
+            while (suma > 21) suma = String(suma).split('').map(Number).reduce((a, b) => a + b, 0);
+            let cartaImg = document.getElementById("cartaImagen");
+            let cartaTexto = document.getElementById("cartaDestino");
+
+            let index = 0;
+            cartaImg.style.display = "block";
+            let interval = setInterval(() => {
+                cartaImg.src = cartasTarot[index % 22].imagen;
+                index++;
+            }, 100);
+
+            setTimeout(() => {
+                clearInterval(interval);
+                cartaImg.src = cartasTarot[suma].imagen;
+                cartaImg.style.transform = "rotateY(360deg)";
+                cartaTexto.innerHTML = `<strong>${cartasTarot[suma].nombre}</strong>`;
+            }, 3000);
+        }
+    </script>
+    <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
+    <script>
+        kofiWidgetOverlay.draw('tarotvia', {
+            'type': 'floating-chat',
+            'floating-chat.donateButton.text': '☕ Apóyame en Ko-Fi',
+            'floating-chat.donateButton.background-color': '#ff6bcb',
+            'floating-chat.donateButton.text-color': '#fff'
+        });
+    </script>
+</body>
+
+</html>
