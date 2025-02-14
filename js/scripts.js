@@ -23,10 +23,10 @@ function cargarContenido(seccion) {
             <p>El Cristal <br>de hoy</p>
             </div>
             <div class="icon-item">
-            <a href="alma/consejo.html">
+            <a href="alma/tirada.html">
                 <img src="img/trust.jpg" alt="Consejo mágico de hoy" class="icon-circle">
             </a>
-            <p>Consejo <br>mágico</p>
+            <p>Tu carta <br>de destino</p>
             </div>
             <div class="icon-item">
             <a href="alma/carta_diaria.html">
