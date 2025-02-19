@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tirada de Si o No</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #87CEEB, #4682B4);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            margin: auto;
+        }
+
+        .tarot-cards {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .tarot-cards img {
+            width: 100px;
+            height: 150px;
+            border-radius: 5px;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #4682B4;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .contact-box {
+            margin-top: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Tirada de Si o No con Tarot Thoth</h2>
+        <h5>Funciona de la siguiente manera: cada carta es un si o un no, gana la mayoría. Sin embargo cada carta
+            también significa algo</h5>
+        <label>Fecha de Nacimiento:</label>
+        <input type="date" id="birthdate"><br><br>
+
+
+        <label>Género:</label>
+        <select id="gender">
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+        </select><br><br>
+
+        <label>Tipo de Pregunta:</label>
+        <select id="questionType">
+            <option value="amor">Amor</option>
+            <option value="dinero">Dinero</option>
+            <option value="salud">Salud</option>
+        </select><br><br>
+
+        <button onclick="generateTarotReading()">Ver mi tirada</button>
+
+        <div class="tarot-cards" id="cards"></div>
+
+        <p id="prediction"></p>
+    </div>
+
+    <div class="contact-box">
+        <p>Si deseas una consulta más detallada sobre tu tirada, puedes contactarme para agendar una lectura
+            personalizada.</p>
+        <a href="https://wa.me/56949378439" target="_blank">
+            <button>📲 Contactar por WhatsApp</button>
+        </a>
+        <a href="../index.html">
+            <button>🏠 Volver a inicio</button>
+        </a>
+    </div>
+
+    <script>
+        const tarotDeck = [
+            { name: "El Loco", image: "00.jpg", meaning: { amor: "Si. Siempre que te arriesgues, si te quedas esperando es No.", dinero: "Si. Oportunidades inesperadas en las finanzas, llega una oportunidad de dinero en un ciclo de 1 semana a 1 mes. Está bien tomar ese riesgo, a veces arriesgarse a ganar es necesario", salud: "Si. Energía y vitalidad en aumento. Aunque haya una dolencia, se sentirá renovado, con el deseo de un borrón y cuenta nueva y con la capacidad de seguir adelante sin el cansancio que le había estado persiguiendo." } },
+            { name: "El Mago", image: "01.jpg", meaning: { amor: "Si. Siempre que luches por superar los obstáculos y mejores.", dinero: "Creatividad para generar ingresos.", salud: "Energía renovada y vitalidad." } },
+            { name: "La Sacerdotisa", image: "02.jpg", meaning: { amor: "No. A menos que pienses más en el otro que en tu bienestar. No recomendable.", dinero: "Necesidad de planear con inteligencia.", salud: "Escucha tu intuición para mejorar tu bienestar." } },
+            { name: "La Emperatriz", image: "03.jpg", meaning: { amor: "Si. Tu nivel de entrega está bien, a veces es bueno guardar secretos.", dinero: "Buen momento para las finanzas.", salud: "Cuidado con la alimentación y el bienestar emocional." } },
+            { name: "El Emperador", image: "04.jpg", meaning: { amor: "No. A menos que suavice su punto de vista, a veces ser muy cuadrado u obstinado le puede significar un No.", dinero: "Control y éxito financiero.", salud: "Disciplina para mantener la salud." } },
+            { name: "El Hierofante", image: "05.jpg", meaning: { amor: "No. Le dicen que no pero le dan una llave, tome la llave y quizás transforma el No en Si.", dinero: "Éxito a través de la disciplina.", salud: "Cuida la conexión entre mente y cuerpo." } },
+            { name: "Los Enamorados", image: "06.jpg", meaning: { amor: "Si. Decisiones importantes en el amor.", dinero: "Opciones financieras que requieren reflexión.", salud: "Equilibrio emocional y físico." } },
+            { name: "El Carro", image: "07.jpg", meaning: { amor: "Si. Avance y control en las relaciones.", dinero: "Éxito financiero gracias a la determinación.", salud: "Energía y vitalidad en aumento." } },
+            { name: "La Justicia", image: "08.jpg", meaning: { amor: "No. Honestidad y equilibrio en el amor.", dinero: "Decisiones financieras justas y prudentes.", salud: "Cuida el balance en tu vida." } },
+            { name: "El Ermitaño", image: "09.jpg", meaning: { amor: "No. Tiempo de introspección en el amor.", dinero: "Reflexión antes de inversiones importantes.", salud: "Descanso necesario para el bienestar." } },
+            { name: "La Rueda de la Fortuna", image: "10.jpg", meaning: { amor: "No. Cambios inesperados en el amor.", dinero: "Buena suerte en los negocios.", salud: "Ciclos de salud fluctuantes." } },
+            { name: "La Fuerza", image: "11.jpg", meaning: { amor: "Si. Siempre que seas paciente y sepas aguardar, de otra forma es No.", dinero: "Éxito a través de la perseverancia.", salud: "Resistencia física y emocional." } },
+            { name: "El Colgado", image: "12.jpg", meaning: { amor: "No. A menos que cambies de perspectiva y hagas un sacrificio.", dinero: "Momento de pausa en las finanzas.", salud: "Tiempo de sanación y descanso." } },
+            { name: "La Muerte", image: "13.jpg", meaning: { amor: "Transformación y nuevos comienzos.", dinero: "Cambio radical en las finanzas.", salud: "Renovación y mejoras en la salud." } },
+            { name: "La Templanza", image: "14.jpg", meaning: { amor: "Armonía y paciencia en el amor.", dinero: "Balance en las finanzas.", salud: "Buena salud a través del equilibrio." } },
+            { name: "El Diablo", image: "15.jpg", meaning: { amor: "Relaciones intensas y pasionales.", dinero: "Cuidado con excesos financieros.", salud: "Evita hábitos poco saludables." } },
+            { name: "La Torre", image: "16.jpg", meaning: { amor: "Rupturas o cambios drásticos.", dinero: "Crisis financiera que lleva a transformación.", salud: "Evita el estrés para cuidar tu bienestar." } },
+            { name: "La Estrella", image: "17.jpg", meaning: { amor: "Esperanza y armonía en relaciones.", dinero: "Buenas oportunidades en lo laboral.", salud: "Sanación y bienestar." } },
+            { name: "La Luna", image: "18.jpg", meaning: { amor: "No. No fuerce las cosas, luche contra los pensamientos oscuros, no es momento de discutir, posponga hasta que todo mejore.", dinero: "Cuidado con engaños financieros.", salud: "No. Proceda con cautela, con cuidado, mirando bien antes de cruzar. Todo estará bien con cautela." } },
+            { name: "El Sol", image: "19.jpg", meaning: { amor: "Si. Alegría y éxito en el amor. Momentos bonitos. Salidas. Primer hijo hombre. Belleza y amor en pareja", dinero: "Prosperidad y felicidad financiera. Aproveche la buena racha para ahorrar.", salud: "Si. Vitalidad y energía positiva. Estará absorbiendo mejor las vitaminas, intente comer sano que eso se multiplicará en salud para su vida en esta buena racha." } },
+            { name: "El Juicio", image: "20.jpg", meaning: { amor: "Si. Desde arriba hay algo que le ayuda, a que pueda ser feliz en el amor. Ese algo lucha por entregarle la felicidad. Usted tiene la razón en eso que piensa y duda, pero también anda demasiado asertivo por lo que intente pensar cosas buenas para que eso se manifieste en el amor.", dinero: "Momento de decisiones importantes. Las cosas saldrán como usted lo desea.", salud: "Transformaciones positivas en la salud. Esos exámenes mejorarán. Cambie sus costumbres, haga caso al tratamiento y todo mejorará." } },
+            { name: "El Mundo", image: "21.jpg", meaning: { amor: "Si. Ese amor o relación es algo tóxico, pero continuan juntos de todas formas.", dinero: "Logra ese empleo que desea.", salud: "Bienestar total y energía renovada. Ese dolor de piernas mejora." } }
+        ];
+
+
+
+        function generateTarotReading() {
+            let birthdate = document.getElementById("birthdate").value;
+            let gender = document.getElementById("gender").value;
+            let questionType = document.getElementById("questionType").value;
+
+            if (!birthdate) {
+                alert("Por favor, ingresa tu fecha de nacimiento.");
+                return;
+            }
+
+            let drawnCards = tarotDeck.sort(() => 0.5 - Math.random()).slice(0, 3);
+
+            let labels = ["PASADO", "PRESENTE", "FUTURO"];
+            document.getElementById("cards").innerHTML = drawnCards.map((card, index) => {
+                let siONo = card.meaning[questionType].includes("Si") ? "SÍ" : "NO";
+                let color = siONo === "SÍ" ? "green" : "red";
+                return `
+                <div class='tarot-card'>
+                    <span class='tarot-label'>${labels[index]}</span>
+                    <img src='../thoth/${card.image}' alt='${card.name}'>
+                    <span class='tarot-label' style='margin-top:5px; color: ${color}; font-size: 18px;'>${siONo}</span>
+                </div>
+            `;
+            }).join(" ");
+
+            // Mejorando la presentación del mensaje final
+            let predictionText = `<strong>Tu tirada de tarot:</strong><br><br>
+        <ul style="text-align: left; display: inline-block;">
+        ${drawnCards.map(card => `<li><strong>${card.name}:</strong> ${card.meaning[questionType]}</li>`).join("")}
+        </ul>`;
+
+            document.getElementById("prediction").innerHTML = predictionText;
+        }
+    </script>
+
+</body>
+
+</html>
