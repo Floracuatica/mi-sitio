@@ -236,41 +236,6 @@ function cargarContenido(seccion) {
             </div>
             </div>`;
             break;
-        case 'disponibilidad':
-            contenido = `
-            <div class="disponibilidad-container">
-            <h1>Consulta por tu horario disponible</h1>
-            <div id="lecturas">
-            <div id="lunes" class="day">
-                <h2>Lunes:</h2>
-                <p>Mañana: 10:00, 11:00, 12:00</p>
-                <p>Noche: 22:00, 23:00, 24:00</p>
-            </div>
-            <div id="martes" class="day">
-                <h2>Martes:</h2>
-                <p>Mañana: 10:00, 11:00, 12:00</p>
-                <p>Tarde: 15:00, 16:00, 17:00</p>
-                <p>Noche: 22:00, 23:00, 24:00</p>
-            </div>
-            <div id="miercoles" class="day">
-                <h2>Miércoles:</h2>
-                <p>Mañana: 10:00, 11:00, 12:00</p>
-                <p>Tarde: 15:00, 16:00</p>
-                <p>Noche: 22:00, 23:00, 24:00</p>
-            </div>
-            <div id="jueves" class="day">
-                <h2>Jueves y Viernes:</h2>
-                <p>Mañana: 10:00, 11:00, 12:00</p>
-                <p>Noche: 22:00, 23:00, 24:00</p>
-            </div>
-            <div id="sabado" class="day">
-                <h2>Sábados y Domingos:</h2>
-                <p>Mañana: 10:00, 11:00, 12:00</p>
-                <p>Tarde: 15:00 - 23:00</p>
-            </div>
-            </div>
-            </div>`;
-            break;
         case 'contacto':
             contenido = `
             <h1 style="margin-bottom: 20px; font-family: 'Afacad Flux', serif;">Contacto</h1>
