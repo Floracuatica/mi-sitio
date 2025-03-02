@@ -7,6 +7,15 @@ body {
     background-color: #f5f5f5; /* Fondo blanco invierno */
 }
 
+.flow-container {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente si el contenedor padre tiene altura suficiente */
+    text-align: center; /* Asegura que el texto dentro de los divs también esté centrado */
+}
+
 /* Estilo de la barra lateral */
 .sidebar ul {
     list-style-type: none;
