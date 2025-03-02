@@ -36,7 +36,7 @@ function cargarContenido(seccion) {
             </div> -->
             </div>
             
-            <!-- Sección del flujo de lectura de tarot -->
+            <!-- Sección del flujo de lectura de tarot 
             <div class="flow-container" style="margin-top: 30px;">
                 <div class="box">🌙 ¿Necesitas una lectura? 🔮</div>
                 
@@ -58,11 +58,12 @@ function cargarContenido(seccion) {
                     <div class="box">🤔 Piensa tus preguntas</div>
                     <button onclick="showNext('back')">Regresar 🔄</button>
                 </div>
-            </div>
+            </div> -->
+            
             <div class="services">
             <h2>Servicios</h2>
             <ul>
-                <li><strong>Lecturas de Tarot Personalizadas:</strong> Si tiene dudas, ya sea sobre amor, trabajo o 
+                <li><strong>Lecturas de Tarot:</strong> Si tiene dudas, ya sea sobre amor, trabajo o 
                 crecimiento personal, puede siempre agendar en el horario que prefiera y puede también realizar la misma consulta
                 a través de diferentes ángulos. Estoy para escucharle.</li>
                 <li><strong>Rituales de Conexión Espiritual:</strong> Ritualizaciones para manifestar deseos o 
