@@ -8,7 +8,7 @@ function cargarContenido(seccion) {
             <h1><br><br>Bienvenido a Tarot Vía: Conecte con su energía interior</h1>
             <p>Lecturas de tarot personalizadas.</p>
 
-            <!-- Sección de 4 íconos con palabras debajo -->
+            <!-- Sección de 4 íconos con palabras debajo 
             <div class="icon-bar">
             <div class="icon-item">
             <a href="alma/horoscopo.html">
@@ -33,7 +33,7 @@ function cargarContenido(seccion) {
                 <img src="img/commitment.jpg" alt="Carta diaria" class="icon-circle">
             </a>
             <p>Carta <br>diaria</p>
-            </div>
+            </div> -->
             </div>
             
             <!-- Sección del flujo de lectura de tarot -->
