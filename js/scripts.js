@@ -237,6 +237,16 @@ function cargarContenido(seccion) {
             </div>
             </div>`;
             break;
+        case 'catalogo': 
+            contenido = `
+            <h1 style="margin-bottom: 20px; font-family: 'Afacad Flux', serif;">Compras Mágicas</h1>
+            <p style="font-family: 'Afacad Flux', serif; padding: 10px; margin-left: 20px; margin-right: 20px; text-align: justify;">
+            Explora nuestra selección de joyas intencionadas y encuentra el accesorio perfecto para tu protección, prosperidad o guía espiritual. 
+            Haz clic en cualquier artículo para ser dirigido a Mercado Libre y completar tu compra.
+            </p>
+            <iframe src="catalogo.html" style="width: 100%; height: 90vh; border: none;"></iframe>
+            `;
+            break;
         case 'contacto':
             contenido = `
             <h1 style="margin-bottom: 20px; font-family: 'Afacad Flux', serif;">Contacto</h1>
