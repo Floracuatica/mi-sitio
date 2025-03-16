@@ -244,7 +244,7 @@ function cargarContenido(seccion) {
             Explora nuestra selección de joyas intencionadas y encuentra el accesorio perfecto para tu protección, prosperidad o guía espiritual. 
             Haz clic en cualquier artículo para ser dirigido a Mercado Libre y completar tu compra.
             </p>
-            <iframe src="catalogo.html" style="width: 100%; height: 90vh; border: none;"></iframe>
+            <iframe src="alma/catalogo.html" style="width: 100%; height: 90vh; border: none;"></iframe>
             `;
             break;
         case 'contacto':
