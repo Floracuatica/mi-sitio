@@ -22,11 +22,46 @@
             text-align: center;
         }
 
-        h1, h2 {
+        h1,
+        h2 {
             font-weight: 600;
             /* Un poco más grueso para los títulos */
             font-style: normal;
             color: #6a0572;
+        }
+
+        /* Estilo del modal */
+        .modal {
+            display: none;
+            /* Asegura que inicia oculto */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        /* Ocultar el modal correctamente al inicio */
+        .modal img {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+        }
+
+        /* Botón de cerrar */
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            font-size: 50px;
+            color: white;
+            cursor: pointer;
         }
 
         p {
@@ -84,6 +119,28 @@
 </head>
 
 <body>
+    <div class="about-certifications">
+        <h2>Verifica mis certificaciones</h2>
+        <ul>
+            <li><a href="#" onclick="openModal('reiki'); return false;">📜 Reiki a Distancia</a></li>
+            <li><a href="#" onclick="openModal('tarot'); return false;">📜 Tarot Terapéutico</a></li>
+            <li><a href="#" onclick="openModal('aqua'); return false;">📜 Maestría de Aqualead</a></li>
+            <li><a href="#" onclick="openModal('terapia'); return false;">📜 Diplomado Terapeuta Ritual</a></li>
+            <li><a href="#" onclick="openModal('registros'); return false;">📜 Maestría en Registros Akashicos</a>
+            </li>
+            <li><a href="#" onclick="openModal('circulo'); return false;">📜 Facilitadora Círculos de Hombres y Mujeres</a>
+            </li>
+            <li><a href="#" onclick="openModal('parasitos'); return false;">📜 Extracción de Larvas y Parásitos Astrales</a></li>
+        </ul>
+
+    </div>
+
+    <!-- Modal (Ventana Emergente) -->
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modal-image" src="" alt="Certificación">
+    </div>
+
     <div class="container">
         <h1>Sobre mí</h1>
         <img src="../img/rommy.png" alt="Rommy - Lectora de Tarot" class="about-image">
@@ -111,7 +168,7 @@
         </p>
         <p>
             El tarot es una gran parte de mi vida, pero no es lo único. Soy Traductora e
-                Intérprete en Inglés y Español, tengo una especialización en Logística y recientemente terminé un
+            Intérprete en Inglés y Español, tengo una especialización en Logística y recientemente terminé un
             técnico en Análisis de Sistemas. ¿Por qué? Porque quería ser capaz de crear este sitio.
         </p>
         <p>
@@ -129,8 +186,42 @@
         <a href="../index.html" class="btn">⬅️ Regresar al Inicio</a>
 
         <div class="footer">
-            ✨  ✨
+            ✨ ✨
         </div>
     </div>
 </body>
+<script>function openModal(certification) {
+        let imageSrc = '';
+
+        // Asignar la imagen correcta según la certificación
+        if (certification === 'reiki') {
+            imageSrc = '../img/certreiki.jpg'; // Cambia por la ruta real
+        } else if (certification === 'tarot') {
+            imageSrc = '../img/certtarot.jpg'; // Cambia por la ruta real
+        }
+        else if (certification === 'aqua') {
+            imageSrc = '../img/certaqualead.jpg';
+        } else if (certification === 'terapia') {
+            imageSrc = '../img/certerapia.jpg';
+        } else if (certification === 'registros') {
+            imageSrc = '../img/certreg.jpg';
+        } else if (certification === 'circulo') {
+            imageSrc = '../img/certcirc.jpg';
+        } else if (certification === 'parasitos') {
+            imageSrc = '../img/certpara.jpg';
+        }
+
+
+        // Verificar si la imagen existe antes de mostrar el modal
+        if (imageSrc !== '') {
+            document.getElementById("modal-image").src = imageSrc;
+            document.getElementById("modal").style.display = "flex"; // Mostrar modal
+        }
+    }
+
+    function closeModal() {
+        document.getElementById("modal").style.display = "none";
+    }
+</script>
+
 </html>
