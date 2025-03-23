@@ -5,7 +5,7 @@ function cargarContenido(seccion) {
         case 'inicio':  // Este es el nuevo caso para la página de inicio
             contenido = `
             <div class="intro-section">
-            <h1><br><br>Bienvenido a Tarot Vía: Conecte con su energía interior</h1>
+            <h1><br><br>Bienvenido a Tarot Vía: Conecte con su mundo espiritual</h1>
             <p>Lecturas de tarot personalizadas.</p>
 
             <!-- Sección de 4 íconos con palabras debajo 
@@ -63,13 +63,13 @@ function cargarContenido(seccion) {
             <div class="services">
             <h2>Servicios</h2>
             <ul>
-                <li><strong>Lecturas de Tarot:</strong> Si tiene dudas, ya sea sobre amor, trabajo o 
-                crecimiento personal, puede siempre agendar en el horario que prefiera y puede también realizar la misma consulta
-                a través de diferentes ángulos. Estoy para escucharle.</li>
+                <li><strong>Lecturas de Tarot:</strong> Resuelva dudas, corrobore información, tome el control de sus experiencias. Ya sea en el amor, el trabajo o 
+                el crecimiento personal, agende en el horario que prefiera. No hay límite a lo que puede preguntar. Puede preguntar 
+                a través de diferentes ángulos. Estoy para escucharle y ver cómo attraer lo deseado.</li>
                 <li><strong>Rituales de Conexión Espiritual:</strong> Ritualizaciones para manifestar deseos o 
-                    liberar bloqueos energéticos que ya no le sirven.</li>
+                    liberar bloqueos energéticos que ya no sirven.</li>
                 <li><strong>Cursos y Talleres vía Zoom:</strong> Aprenda sobre el uso del tarot, rituales y 
-                    talismanes para potenciar su vida diaria. Siempre puede consultar.</li>
+                    talismanes para potenciar su vida diaria. Siempre puede consultar por las clases vía zooom.</li>
             </ul>
             </div>
 
