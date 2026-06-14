@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarot de Rommy • Lectura Mística</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Inter:wght@300;400;500&amp;family=Playfair+Display:wght@400&amp;display=swap');
+
+        :root {
+            --gold: #D4AF77;
+            --deep-purple: #2D1B4E;
+            --royal-purple: #4C2A7A;
+        }
+
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+            overflow-y: auto !important;
+            height: auto !important;
+            min-height: 100vh;
+        }
+
+        html {
+            height: auto;
+            overflow-y: auto;
+        }
+
+        .title-font {
+            font-family: 'Playfair Display', Georgia, serif;
+            letter-spacing: -0.025em;
+        }
+
+        .mystic-bg {
+            background: radial-gradient(circle at center, #1A1329 0%, #0F0A1C 45%, #08060F 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Mystical nebula layers */
+        .nebula {
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 30% 20%, rgba(109, 40, 217, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(167, 139, 250, 0.12) 0%, transparent 55%),
+                radial-gradient(circle at 50% 50%, rgba(76, 42, 122, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Animated stars */
+        .star {
+            position: absolute;
+            background: #D4AF77;
+            border-radius: 50%;
+            box-shadow: 0 0 6px #D4AF77, 0 0 12px #D4AF77;
+            animation: twinkle 1.8s ease-in-out infinite;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(0.6); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        /* Gold shimmer */
+        .gold-shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gold-shimmer::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -100%;
+            width: 50%;
+            height: 200%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(212, 175, 119, 0.35),
+                transparent
+            );
+            animation: shimmer 2.2s infinite;
+        }
+
+        @keyframes shimmer {
+            100% {
+                transform: translateX(300%);
+            }
+        }
+
+        /* Elegant form */
+        .mystic-input {
+            background-color: rgba(15, 10, 28, 0.85);
+            border: 1px solid rgba(212, 175, 119, 0.25);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            color: #F5F0E6;
+        }
+
+        .mystic-input:focus {
+            border-color: #D4AF77;
+            box-shadow: 0 0 0 3px rgba(212, 175, 119, 0.1);
+            outline: none;
+        }
+
+        .mystic-input::placeholder {
+            color: #8B7A9E;
+        }
+
+        /* The big magical button */
+        .tarot-button {
+            background: linear-gradient(145deg, #D4AF77 0%, #B38B5E 100%);
+            color: #1A1329;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 
+                0 10px 15px -3px rgb(0 0 0 / 0.4),
+                0 4px 6px -4px rgb(0 0 0 / 0.4),
+                inset 0 1px 0 rgba(255,255,255,0.35),
+                inset 0 -2px 0 rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tarot-button:hover {
+            transform: translateY(-2px) scale(1.015);
+            box-shadow: 
+                0 20px 25px -5px rgb(0 0 0 / 0.5),
+                0 10px 10px -5px rgb(0 0 0 / 0.5),
+                0 0 0 1px rgba(212, 175, 119, 0.5);
+        }
+
+        .tarot-button:active {
+            transform: scale(0.985);
+        }
+
+        /* Tarot Card Styles */
+        .tarot-card {
+            perspective: 1200px;
+            width: 100%;
+            max-width: 210px;
+            margin: 0 auto;
+        }
+
+        .tarot-card-inner {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 5 / 7.8;
+            transition: transform 0.85s cubic-bezier(0.23, 1, 0.32, 1);
+            transform-style: preserve-3d;
+            cursor: pointer;
+            box-shadow: 
+                0 25px 50px -12px rgb(0 0 0 / 0.6),
+                0 10px 10px -6px rgb(0 0 0 / 0.5);
+            border-radius: 14px;
+        }
+
+        .tarot-card.flipped .tarot-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .tarot-card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+        .tarot-card-back {
+            background: linear-gradient(145deg, #1F1633 0%, #140E24 100%);
+            border: 3px solid #D4AF77;
+            box-shadow: inset 0 0 60px rgba(0,0,0,0.6);
+        }
+
+        .tarot-card-back::before {
+            content: '';
+            position: absolute;
+            inset: 12px;
+            border: 1px solid rgba(212, 175, 119, 0.45);
+            border-radius: 8px;
+        }
+
+        .tarot-card-back::after {
+            content: '';
+            position: absolute;
+            inset: 22px;
+            background: 
+                radial-gradient(circle, rgba(212,175,119,0.08) 1px, transparent 1px);
+            background-size: 22px 22px;
+            border-radius: 6px;
+        }
+
+        .tarot-card-front {
+            background: linear-gradient(160deg, #211B36 0%, #181328 100%);
+            border: 3px solid #D4AF77;
+            transform: rotateY(180deg);
+            box-shadow: inset 0 0 80px rgba(0,0,0,0.75);
+        }
+
+        .tarot-card-front::before {
+            content: '';
+            position: absolute;
+            inset: 6px;
+            border: 1px solid rgba(212, 175, 119, 0.35);
+            border-radius: 8px;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Real tarot card images inside the flip */
+        .tarot-card-front img {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            transition: transform 0.2s ease;
+        }
+        .group:hover .tarot-card-front img {
+            transform: scale(1.015);
+        }
+
+        /* Ensure full page scrolling is never blocked */
+        #reading-section {
+            min-height: 400px;
+        }
+
+        /* Card content */
+        .card-symbol {
+            font-size: 3.75rem;
+            line-height: 1;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.6));
+        }
+
+        .card-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            letter-spacing: -0.015em;
+        }
+
+        /* Position labels */
+        .position-label {
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #D4AF77;
+        }
+
+        /* Flying cards animation */
+        .flying-card {
+            position: absolute;
+            width: 68px;
+            height: 108px;
+            background: linear-gradient(145deg, #1F1633 0%, #140E24 100%);
+            border: 2px solid #D4AF77;
+            border-radius: 8px;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.6);
+            z-index: 50;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .flying-card::before {
+            content: '';
+            position: absolute;
+            inset: 6px;
+            border: 1px solid rgba(212, 175, 119, 0.5);
+            border-radius: 4px;
+        }
+
+        .flying-card::after {
+            content: '✧';
+            color: #D4AF77;
+            font-size: 1.15rem;
+            opacity: 0.7;
+        }
+
+        /* Particle effect */
+        .particle {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: #D4AF77;
+            border-radius: 50%;
+            pointer-events: none;
+            box-shadow: 0 0 8px #D4AF77;
+            z-index: 60;
+            animation: particle-burst 900ms forwards ease-out;
+        }
+
+        @keyframes particle-burst {
+            to {
+                transform: translate(var(--tx), var(--ty)) scale(0.1);
+                opacity: 0;
+            }
+        }
+
+        /* Reading container */
+        .reading-container {
+            animation: fadeInUp 0.7s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+        }
+
+        .mystic-text {
+            color: #EDE4D5;
+        }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(212,175,119,0.25), transparent);
+        }
+    </style>
+</head>
+<body class="mystic-bg text-[#EDE4D5] selection:bg-amber-300/30">
+    <!-- Background stars -->
+    <div id="stars-container" class="fixed inset-0 pointer-events-none z-0"></div>
+    
+    <!-- Nebula overlay -->
+    <div class="nebula fixed inset-0 z-0"></div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 pt-10 pb-[1200px]">
+        
+        <!-- HEADER -->
+        <div class="text-center mb-10">
+            <div class="flex items-center justify-center gap-x-3 mb-3">
+                <div class="w-8 h-px bg-gradient-to-r from-transparent to-[#D4AF77]"></div>
+                <i class="fa-solid fa-moon text-[#D4AF77] text-2xl"></i>
+                <div class="w-8 h-px bg-gradient-to-l from-transparent to-[#D4AF77]"></div>
+            </div>
+            
+            <h1 class="title-font text-6xl md:text-7xl font-bold tracking-tighter text-[#F5F0E6]">
+                Tarot de <span class="text-[#D4AF77]">Rommy</span>
+            </h1>
+            <p class="mt-2 text-lg text-[#C4B5A8] tracking-wide">El destino susurra. ¿Estás listo para escuchar?</p>
+        </div>
+
+        <!-- FORM SECTION -->
+        <div id="form-section" class="max-w-lg mx-auto">
+            <div class="bg-[#140E24]/90 backdrop-blur-xl border border-[#D4AF77]/20 rounded-3xl p-8 md:p-9 shadow-2xl">
+                
+                <div class="text-center mb-7">
+                    <div class="inline-flex items-center gap-x-2 px-4 py-1 rounded-full border border-[#D4AF77]/30 bg-[#1F1633]/60 text-xs tracking-[2px] text-[#D4AF77]">
+                        <i class="fa-solid fa-star"></i> 
+                        <span>LECTURA PERSONALIZADA</span>
+                    </div>
+                </div>
+
+                <form id="tarot-form" class="space-y-5" autocomplete="off" novalidate>
+                    <!-- Nombre -->
+                    <div>
+                        <label class="block text-sm font-medium mb-1.5 text-[#C4B5A8]">Tu nombre</label>
+                        <input type="text" id="name" required autocomplete="off"
+                               class="mystic-input w-full px-4 py-3 rounded-2xl text-base placeholder:text-[#8B7A9E]"
+                               placeholder="Rellena con tu nombre">
+                    </div>
+
+                    <!-- Fecha de nacimiento -->
+                    <div>
+                        <label class="block text-sm font-medium mb-1.5 text-[#C4B5A8]">Fecha de nacimiento</label>
+                        <input type="date" id="dob" required autocomplete="off"
+                               class="mystic-input w-full px-4 py-3 rounded-2xl text-base">
+                    </div>
+
+                    <!-- Pregunta -->
+                    <div>
+                        <label class="block text-sm font-medium mb-1.5 text-[#C4B5A8]">¿Cuál es tu pregunta al Tarot?</label>
+                        <textarea id="question" rows="3" required autocomplete="off" spellcheck="false"
+                                  class="mystic-input w-full px-4 py-3.5 rounded-2xl text-base resize-y min-h-[92px]"
+                                  placeholder="¿Encontraré el amor este año? ¿Debo cambiar de trabajo? ¿Qué me depara el destino en mi camino espiritual?"></textarea>
+                    </div>
+
+                    <!-- Shuffle Button -->
+                    <div class="pt-3">
+                        <button type="button" id="shuffle-btn"
+                                class="tarot-button w-full py-4 text-lg rounded-3xl flex items-center justify-center gap-x-3 font-semibold shadow-xl active:scale-[0.985]">
+                            <i class="fa-solid fa-cards text-xl"></i>
+                            <span class="font-bold tracking-wide">BARAJAR LAS CARTAS</span>
+                            <i class="fa-solid fa-cards text-xl"></i>
+                        </button>
+                        <p class="text-center text-xs mt-3 text-[#8B7A9E]">Las cartas nunca mienten. Prepárate para la verdad.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- SHUFFLE ANIMATION AREA -->
+        <div id="shuffle-area" class="hidden relative max-w-4xl mx-auto mt-8 h-[280px] md:h-[320px]">
+            <div id="flying-cards-container" 
+                 class="absolute inset-0 flex items-center justify-center pointer-events-none"></div>
+            <div class="absolute inset-x-0 bottom-6 text-center">
+                <div class="inline-flex items-center gap-x-2 px-5 py-1.5 bg-[#1F1633]/90 border border-[#D4AF77]/20 rounded-full text-sm text-[#D4AF77]">
+                    <i class="fa-solid fa-sync fa-spin-pulse"></i> 
+                    <span id="shuffle-text">Las cartas se están barajando...</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- READING RESULTS -->
+        <div id="reading-section" class="hidden max-w-5xl mx-auto mt-6 reading-container pb-12">
+            
+            <!-- Header de la lectura -->
+            <div class="text-center mb-8">
+                <div class="flex justify-center mb-2">
+                    <div class="inline-flex items-center gap-x-[6px] px-5 py-1 rounded-full bg-[#2D1B4E] border border-[#D4AF77]/30 text-sm">
+                        <span class="text-[#D4AF77]">✦</span> 
+                        <span id="reading-header-name" class="font-medium"></span>
+                        <span class="text-[#8B7A9E]">•</span> 
+                        <span id="zodiac-sign" class="font-medium text-[#D4AF77]"></span>
+                    </div>
+                </div>
+                
+                <h2 class="title-font text-4xl md:text-[2.65rem] tracking-tighter font-bold">Tu Lectura del Destino</h2>
+                <p class="mt-2 text-[#C4B5A8] max-w-md mx-auto">Las tres cartas revelan tu camino: <span class="font-medium text-[#EDE4D5]">Pasado, Presente y Futuro</span>.</p>
+            </div>
+
+            <!-- The 3 Cards Spread -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 max-w-[980px] mx-auto">
+                
+                <!-- PASADO -->
+                <div class="group">
+                    <div class="flex items-center justify-center gap-x-2 mb-3">
+                        <div class="position-label tracking-[3px]">Pasado</div>
+                    </div>
+                    <div id="card-1" class="tarot-card cursor-pointer" onclick="flipCard(this)">
+                        <div class="tarot-card-inner">
+                            <!-- Back (decorative) -->
+                            <div class="tarot-card-face tarot-card-back flex flex-col items-center justify-center">
+                                <div class="text-[#D4AF77] text-4xl mb-1">✧</div>
+                                <div class="text-[11px] font-medium tracking-[3.5px] text-[#C4B5A8]">TAROT DE ROMMY</div>
+                                <div class="mt-3 text-xs text-[#8B7A9E]">El destino se revela</div>
+                            </div>
+                            
+                            <!-- Front: Real Labubu Tarot Card Image -->
+                            <div class="tarot-card-face tarot-card-front p-2 flex flex-col">
+                                <div class="flex-1 flex items-center justify-center overflow-hidden rounded-md">
+                                    <img id="card-img-1" 
+                                         class="max-h-[240px] md:max-h-[280px] max-w-full object-contain rounded-md border border-[#D4AF77]/20 shadow-inner"
+                                         alt="Carta de El Loco - Tarot Labubu">
+                                </div>
+                                <div class="mt-2 text-center px-1">
+                                    <div id="name-1" class="card-title text-sm font-bold text-[#F5F0E6] leading-tight"></div>
+                                    <div id="meaning-1" class="text-[10px] uppercase tracking-widest text-[#D4AF77]/80 font-medium"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Personalized interpretation below the card -->
+                    <div class="mt-4 px-1">
+                        <p id="interpretation-1" class="text-xs leading-relaxed text-[#CFC3A8] text-center"></p>
+                    </div>
+                </div>
+
+                <!-- PRESENTE -->
+                <div class="group">
+                    <div class="flex items-center justify-center gap-x-2 mb-3">
+                        <div class="position-label tracking-[3px]">Presente</div>
+                    </div>
+                    <div id="card-2" class="tarot-card cursor-pointer" onclick="flipCard(this)">
+                        <div class="tarot-card-inner">
+                            <!-- Back (decorative) -->
+                            <div class="tarot-card-face tarot-card-back flex flex-col items-center justify-center">
+                                <div class="text-[#D4AF77] text-4xl mb-1">✧</div>
+                                <div class="text-[11px] font-medium tracking-[3.5px] text-[#C4B5A8]">TAROT DE ROMMY</div>
+                                <div class="mt-3 text-xs text-[#8B7A9E]">El destino se revela</div>
+                            </div>
+                            
+                            <!-- Front: Real Labubu Tarot Card Image -->
+                            <div class="tarot-card-face tarot-card-front p-2 flex flex-col">
+                                <div class="flex-1 flex items-center justify-center overflow-hidden rounded-md">
+                                    <img id="card-img-2" 
+                                         class="max-h-[240px] md:max-h-[280px] max-w-full object-contain rounded-md border border-[#D4AF77]/20 shadow-inner"
+                                         alt="Carta del Tarot Labubu">
+                                </div>
+                                <div class="mt-2 text-center px-1">
+                                    <div id="name-2" class="card-title text-sm font-bold text-[#F5F0E6] leading-tight"></div>
+                                    <div id="meaning-2" class="text-[10px] uppercase tracking-widest text-[#D4AF77]/80 font-medium"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Personalized interpretation below the card -->
+                    <div class="mt-4 px-1">
+                        <p id="interpretation-2" class="text-xs leading-relaxed text-[#CFC3A8] text-center"></p>
+                    </div>
+                </div>
+
+                <!-- FUTURO -->
+                <div class="group">
+                    <div class="flex items-center justify-center gap-x-2 mb-3">
+                        <div class="position-label tracking-[3px]">Futuro</div>
+                    </div>
+                    <div id="card-3" class="tarot-card cursor-pointer" onclick="flipCard(this)">
+                        <div class="tarot-card-inner">
+                            <!-- Back (decorative) -->
+                            <div class="tarot-card-face tarot-card-back flex flex-col items-center justify-center">
+                                <div class="text-[#D4AF77] text-4xl mb-1">✧</div>
+                                <div class="text-[11px] font-medium tracking-[3.5px] text-[#C4B5A8]">TAROT DE ROMMY</div>
+                                <div class="mt-3 text-xs text-[#8B7A9E]">El destino se revela</div>
+                            </div>
+                            
+                            <!-- Front: Real Labubu Tarot Card Image -->
+                            <div class="tarot-card-face tarot-card-front p-2 flex flex-col">
+                                <div class="flex-1 flex items-center justify-center overflow-hidden rounded-md">
+                                    <img id="card-img-3" 
+                                         class="max-h-[240px] md:max-h-[280px] max-w-full object-contain rounded-md border border-[#D4AF77]/20 shadow-inner"
+                                         alt="Carta del Tarot Labubu">
+                                </div>
+                                <div class="mt-2 text-center px-1">
+                                    <div id="name-3" class="card-title text-sm font-bold text-[#F5F0E6] leading-tight"></div>
+                                    <div id="meaning-3" class="text-[10px] uppercase tracking-widest text-[#D4AF77]/80 font-medium"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Personalized interpretation below the card -->
+                    <div class="mt-4 px-1">
+                        <p id="interpretation-3" class="text-xs leading-relaxed text-[#CFC3A8] text-center"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question reminder + Overall message -->
+            <div class="max-w-2xl mx-auto mt-16">
+                <div class="bg-[#1F1633]/70 border border-[#D4AF77]/15 rounded-3xl px-6 py-5">
+                    <div class="text-xs uppercase tracking-widest text-[#D4AF77] mb-1">Tu pregunta</div>
+                    <p id="question-reminder" class="italic text-[#CFC3A8] text-[15px]"></p>
+                </div>
+                
+                <!-- Final mystical message -->
+                <div class="mt-6 text-center">
+                    <div class="inline-block bg-gradient-to-r from-[#2D1B4E] to-transparent border border-[#D4AF77]/15 px-7 py-3 rounded-3xl text-sm">
+                        <span id="overall-message"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action buttons -->
+            <div class="flex flex-wrap justify-center gap-x-4 gap-y-3 mt-10">
+                <button onclick="resetReading()"
+                        class="flex items-center gap-x-2 px-6 py-3 text-sm font-semibold rounded-2xl border border-[#D4AF77]/40 hover:bg-[#D4AF77]/10 hover:border-[#D4AF77]/70 transition-all">
+                    <i class="fa-solid fa-redo"></i>
+                    <span>Realizar otra lectura</span>
+                </button>
+                
+                <button onclick="copyReading()"
+                        class="flex items-center gap-x-2 px-6 py-3 text-sm font-semibold rounded-2xl border border-[#D4AF77]/40 hover:bg-[#D4AF77]/10 hover:border-[#D4AF77]/70 transition-all">
+                    <i class="fa-solid fa-copy"></i>
+                    <span>Copiar lectura</span>
+                </button>
+
+                <!-- New button to easily go back down to contact options -->
+                <button onclick="scrollToContact()"
+                        class="flex items-center gap-x-2 px-6 py-3 text-sm font-semibold rounded-2xl bg-[#D4AF77]/10 border border-[#D4AF77]/60 hover:bg-[#D4AF77]/20 hover:border-[#D4AF77] transition-all text-[#D4AF77]">
+                    <i class="fa-solid fa-arrow-down"></i>
+                    <span>Contactar para consulta personalizada</span>
+                </button>
+            </div>
+
+            <!-- Contact section for deeper consultation (part of the continuous reading) -->
+            <div id="contact-section" class="mt-12 text-center">
+                <div class="bg-[#1F1633]/90 border border-[#D4AF77]/25 rounded-3xl p-7 md:p-8">
+                    <div class="flex items-center justify-center gap-x-2 mb-2">
+                        <i class="fa-solid fa-handshake text-[#D4AF77]"></i>
+                        <h3 class="text-[#D4AF77] font-semibold tracking-wide">¿Quieres una consulta más profunda?</h3>
+                    </div>
+                    <p class="text-sm text-[#CFC3A8] max-w-md mx-auto mb-4 leading-relaxed">
+                        Envía un pantallazo (captura de pantalla) de esta lectura y te ayudo personalmente con una interpretación detallada y guiada.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                        <!-- WhatsApp -->
+                        <a href="https://wa.me/56949378439?text=Hola%20Rommy%2C%20aqu%C3%AD%20te%20env%C3%ADo%20un%20pantallazo%20de%20mi%20lectura%20del%20Tarot%20de%20Rommy.%20Me%20gustar%C3%ADa%20una%20consulta%20personalizada%20y%20profunda." 
+                           target="_blank" rel="noopener"
+                           class="inline-flex items-center justify-center gap-x-2 px-6 py-3 bg-[#25D366] hover:bg-[#1EBE5A] transition-all text-white font-semibold text-sm rounded-2xl shadow-md">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Escribirme por WhatsApp</span>
+                        </a>
+                        
+                        <!-- Email -->
+                        <a href="mailto:rsbejar@gmail.com?subject=Consulta%20personalizada%20-%20Lectura%20Tarot%20de%20Rommy&body=Hola%20Rommy%2C%0A%0ATe%20env%C3%ADo%20un%20pantallazo%20(captura%20de%20pantalla)%20de%20mi%20lectura%20del%20Tarot%20de%20Rommy.%0A%0AMe%20gustar%C3%ADa%20que%20me%20ayudes%20con%20una%20interpretaci%C3%B3n%20m%C3%A1s%20profunda%20y%20personalizada.%0A%0AGracias!" 
+                           class="inline-flex items-center justify-center gap-x-2 px-6 py-3 border border-[#D4AF77]/50 hover:bg-[#D4AF77]/10 hover:border-[#D4AF77] transition-all text-sm font-semibold rounded-2xl">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>Enviar por correo</span>
+                        </a>
+                    </div>
+                    
+                    <p class="text-[11px] text-[#8B7A9E] mt-4">+56 9 4937 8439 • Rommy</p>
+
+                    <!-- Easy navigation back to the Labubu cards -->
+                    <div class="mt-5 pt-5 border-t border-[#D4AF77]/20">
+                        <button onclick="scrollToCards()" 
+                                class="inline-flex items-center gap-x-2 text-sm font-medium text-[#D4AF77] hover:text-[#E8D4A3] transition-colors">
+                            <i class="fa-solid fa-arrow-up"></i>
+                            <span>Volver arriba a ver las imágenes de Labubu y toda la información</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Floating back to top button for easy navigation -->
+    <button id="back-to-top-btn"
+            onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+            class="hidden fixed bottom-6 right-6 z-50 bg-[#D4AF77] text-[#1A1329] w-11 h-11 rounded-full shadow-xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all"
+            title="Volver arriba">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <footer class="text-center pb-8 relative z-10">
+        <p class="text-xs text-[#685C7A]">✦ Hecho con intención y estrellas • Tarot de Rommy ✦</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
